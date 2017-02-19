@@ -595,6 +595,5 @@ C:\DesignSketch\Sketch\bin\Microsoft.Owin.Security.OAuth.xml
 C:\DesignSketch\Sketch\bin\Microsoft.Owin.Security.Google.xml
 C:\DesignSketch\Sketch\bin\Microsoft.Owin.Security.Twitter.xml
 C:\DesignSketch\Sketch\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\DesignSketch\Sketch\obj\Debug\Sketch.csprojResolveAssemblyReference.cache
 C:\DesignSketch\Sketch\obj\Debug\Sketch.dll
 C:\DesignSketch\Sketch\obj\Debug\Sketch.pdb
