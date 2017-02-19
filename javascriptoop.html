@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+  
+</head>
+<body>
+     
+    <canvas id="canvas" width=300 height=300></canvas>
+      <br />
+      <button id="clear">Clear Canvas</button>
+    <script type="text/javascript">
+
+
+
+    function Person(name, gender) {
+
+        // Add object properties like this
+        this.name = name;
+        this.gender = gender;
+    }
+
+    // Add methods like this.  All Person objects will be able to invoke this
+    Person.prototype.speak = function () {
+        alert("Howdy, my name is" + this.name);
+    }
+    Person.prototype.eat = function () {
+
+        return "I am eating now !";
+    }
+
+    // Instantiate new objects with 'new'
+    var person = new Person("Bob", "M");
+
+    // Invoke methods like this
+    person.speak(); // alerts "Howdy, my name is Bob"
+
+    alert(person.eat());
+
+
+
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    var canvasMouseX;
+    var canvasMouseY;
+    var canvasOffset = $("#canvas").offset();
+    var offsetX = canvasOffset.left;
+    var offsetY = canvasOffset.top;
+    var storedLines = [];
+    var startX = 0;
+    var startY = 0;
+    var radius = 7;
+    ctx.strokeStyle = "orange";
+    ctx.font = '12px Arial';
+    $("#canvas").mousedown(function (e) {
+        handleMouseDown(e);
+    });
+
+
+
+
+
+
+
+
+    function handleMouseDown(e) {
+        canvasMouseX = parseInt(e.clientX - offsetX);
+        canvasMouseY = parseInt(e.clientY - offsetY);
+        // Put your mousedown stuff here
+        if (hitStartCircle(canvasMouseX, canvasMouseY)) {
+            fillPolyline();
+            return;
+        }
+        storedLines.push({
+            x: canvasMouseX,
+            y: canvasMouseY
+        });
+
+
+
+
+        if (storedLines.length == 1) {
+            startX = canvasMouseX;
+            startY = canvasMouseY;
+            ctx.fillStyle = "green";
+            ctx.beginPath();
+            ctx.arc(canvasMouseX, canvasMouseY, radius, 0, 2 * Math.PI, false);
+            ctx.fill();
+        } else {
+            var c = storedLines.length - 2;
+            ctx.strokeStyle = "orange";
+            ctx.lineWidth = 3;
+
+            ctx.beginPath();
+        }
+    }
+    </script>
+
+</body>
+
+ 
+</html>

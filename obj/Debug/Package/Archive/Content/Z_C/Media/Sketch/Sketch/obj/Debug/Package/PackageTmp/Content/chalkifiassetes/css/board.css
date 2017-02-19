@@ -1,0 +1,322 @@
+::-webkit-scrollbar {
+    width: 10px;
+} /* this targets the default scrollbar (compulsory) */
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.48);
+} /* the new scrollbar will have a flat appearance with the set background color */
+::-webkit-scrollbar-thumb {
+    background-color: #000; 
+    height:30px;
+} /* this will style the thumb, ignoring the track */
+::-webkit-scrollbar-button {
+    background-color: #000;
+} 
+ path,
+ circle,
+ polygon { 
+    fill: #fff; 
+  }
+
+body {
+    background: url("../images/test-background.jpg") 0 0 no-repeat; 
+    background-size: cover;
+    margin: 0;
+    font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #fff;
+    padding-left: 220px;
+}
+.row{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.board {
+    position: relative;
+    height: 100%;
+}
+.menu {
+    background-color: rgba(0, 0, 0, 0.69);
+    height: 95%;
+    width: 220px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    outline: none;
+}
+.menu .inner-menu{
+    overflow-y: scroll;
+    height: 99%;
+    height:calc(100%-20px);
+}
+.menu .add-new{  
+    color:#fff;
+}
+.menu .avatar {
+    background: rgba(0, 0, 0, 0.26);
+    padding: 0.6em 0.5em;
+    text-align: center;
+}
+.menu .avatar h2 {
+    font-weight: normal;
+    margin: 0; 
+    color:#59CBE3;
+    font-family: 'Coming Soon', cursive;
+}
+.menu ul {
+    list-style: none;
+    padding: 0.5em 0;
+    margin: 0;
+}
+.menu ul li {
+    padding: 1em 0em 0em 2em;
+    font-size: 0.95em;
+    font-weight: regular;
+    background-repeat: no-repeat;
+    background-position: left 15px center;
+    background-size: auto 20px;
+    transition: all 0.15s linear;
+    cursor: pointer;
+    border-bottom: 1px solid #000;
+}
+.menu ul li img{
+    width:100px;
+    margin:0 auto;
+}
+.menu ul li p span{
+    color:#59CBE3;
+    font-family: 'Coming Soon', cursive;
+}
+.menu ul li:hover {
+    background-color: rgba(0, 0, 0, 0.26)
+
+}
+.menu ul li:focus {
+    outline: none;
+}
+
+/* zoom */
+.menu ul li figure {
+    width: 180px;
+    height: 150px;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    overflow: hidden;
+    border:1px solid #3D3D3D;
+    transition: .2s linear;
+}
+.menu ul li figure:hover{
+    border:1px solid #59CBE3;
+}
+.menu ul li figure:hover+span {
+    bottom: -36px;
+    opacity: 1;
+
+}
+.menu .add-slide{
+    padding-top: 13px;
+    text-align: center;
+    background-color: #59cbe3;
+    padding-bottom: 13px;
+    font-family: 'Coming Soon', cursive;
+    /* margin-top: -40px; */
+    /* z-index: 11; */
+}
+.menu .add-slide:hover{
+    background-color: #6BD6EC;
+}
+.menu .add-slide a{
+    text-decoration: none;
+
+}
+/* Zoom */
+.menu .hover01 li figure img {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    height: 100%;
+    width: 100%;
+}
+.menu .hover01 li figure:hover img {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+}
+/*zoom*/
+.back-home{
+        position: absolute;
+    bottom: 8px;
+    right: 16px;
+    font-size: 18px;
+    background-color: transparent;
+    font-family: 'Coming Soon', cursive;;
+    padding:5px 20px 5px 50px;
+    color:white;
+    border:none;
+    background: url("../images/back-white.png");
+    background-size: 40px;
+    background-repeat: no-repeat;
+}
+.back-home:hover{
+    color:#59cbe3;
+    background: url("../images/back.png");
+        background-size: 40px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+@media screen and (max-width: 900px) {
+    body {
+        padding-left: 0;
+    }
+    .menu {
+        width: 230px;
+        box-shadow: 0 0 0 100em rgba(0, 0, 0, 0);
+        transform: translate3d(-230px, 0, 0);
+        transition: all 0.3s ease-in-out;
+    }
+    .menu .inner-menu{
+        height:500px;
+    }
+    .menu .smartphone-menu-trigger {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        left: 100%;
+        background: #59CBE3;
+        top:50px;
+    }
+    .menu .smartphone-menu-trigger:before,
+    .menu .smartphone-menu-trigger:after {
+        content: '';
+        width: 50%;
+        height: 2px;
+        background: #fff;
+        border-radius: 10px;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+    }
+    .menu .smartphone-menu-trigger:after {
+        top: 55%;
+        transform: translate3d(-50%, -50%, 0);
+    }
+    .menu ul li {
+        padding: 1em 1em 1em 3em;
+        font-size: 1.2em;
+    }
+    .menu:focus {
+        transform: translate3d(0, 0, 0);
+        box-shadow: 0 0 0 100em rgba(0, 0, 0, 0.6);
+    }
+    .menu:focus .smartphone-menu-trigger {
+        pointer-events: none;
+    }
+
+}
+
+html {
+height:100%;
+}
+.fill { 
+    min-height: 100%;
+    height: 100%;
+}
+
+canvas#canvas2 {
+    width: 100%;
+    height: 100%;
+    background-color: #2d637d;
+    /* margin: 20px; */
+    height: 700px;
+    /* margin-right: 2px; */
+}
+
+div#chat {
+    /* background: gray; */
+    /* float: right; */
+    width: 100%;
+    /* height: 100%; */
+    /* margin: 20px; */
+    min-height: 700px;
+}
+
+div#camera {
+    height: 250px;
+    background: green;
+}
+
+.content {
+    height: 450px;
+    margin: 9px;
+}
+
+
+
+/*Chat Text Input*/
+
+
+.input__field--isao {
+    z-index: 10;
+    padding: 0.75em 0.1em 0.25em;
+    width: 100%;
+    background: transparent;
+    color: #afb3b8;
+}
+.input__field {
+    position: relative;
+    display: block;
+    float: right;
+    padding: 0.8em;
+    width: 60%;
+    border: none;
+    border-radius: 0;
+    background: #f0f0f0;
+    color: #aaa;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-appearance: none;
+}
+
+
+.input__label--isao {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    width: 100%;
+    color: #dadada;
+    text-align: left;
+}
+.input__label {
+    display: inline-block;
+    float: right;
+    padding: 0 1em;
+    width: 40%;
+    color: #6a7989;
+    font-weight: bold;
+    font-size: 70.25%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.input__label-content--isao {
+    padding: 0.75em 0.15em;
+    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+    transition: opacity 0.3s, transform 0.3s;
+    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+.input__label-content {
+    position: relative;
+    display: block;
+    padding: 1.6em 0;
+    width: 100%;
+}
+/*End Chat Text Input*/

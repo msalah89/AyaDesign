@@ -1,0 +1,384 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <style type="text/css">
+        #container2 {
+            position: relative;
+        }
+
+        #canvas2 {
+            border: 1px solid #000;
+        }
+    </style>
+    <script type="text/javascript" style="display:none">
+<!--
+
+        var currenttool = 'circle';
+        function ctool(tool) {
+            currenttool = tool;
+            //alert(tool);
+        }
+        (function (window) {
+
+            var boxes2 = [];
+            var selectionHandles = [];
+            var canvas;
+            var ctx;
+            var WIDTH;
+            var HEIGHT;
+            var INTERVAL = 20;
+            var isDrag = false;
+            var isResizeDrag = false;
+            var expectResize = -1;
+            var mx, my;
+            var canvasValid = false;
+            var mySel = null;
+            var mySelColor = '#CC0000';
+            var mySelWidth = 2;
+            var mySelBoxColor = 'darkred';
+            var mySelBoxSize = 9;
+            var ghostcanvas;
+            var currentbox = null;
+            var gctx;
+            var offsetx, offsety;
+            var currentpaths = [];
+            var stylePaddingLeft,
+                stylePaddingTop, styleBorderLeft, styleBorderTop;
+            function Box2() {
+                this.x = 0; this.y = 0; this.w = 4; this.h = 1; this.fill = '#222';
+                this.tool = currenttool;
+                var deleted = false;
+                var paths=[];
+            }
+            Box2.prototype = {
+                draw: function (context, optionalColor) {
+                    if (this.x + this.w == 3)
+                        return;
+
+                    if (context === gctx)
+                    { context.fillStyle = 'black'; }
+                    else { context.fillStyle = this.fill; }
+                    if (this.x > WIDTH || this.y > HEIGHT)
+                        return;
+                    if (this.x + this.w < 0 || this.y + this.h < 0) return;
+                    context.beginPath();
+
+                    if (this.tool == 'rectangle') {
+                        context.fillRect(this.x, this.y, this.w, this.h);
+                    }
+                    else if (this.tool == "circle") {
+                        context.arc(this.x + (this.w / 2), this.y + (this.w / 2), this.w / 2, 0, 2 * Math.PI, true);
+                        this.h = this.w ;
+                    } context.lineWidth = 4;
+
+                    context.lineTo(this.x, this.y);
+                    context.fill();
+                    if (mySel === this &&currenttool=="select") {
+                        context.strokeStyle = mySelColor;
+                        context.lineWidth = mySelWidth;
+                     context.strokeRect(this.x, this.y, this.w, this.h);
+                        var half = mySelBoxSize / 2;
+                        selectionHandles[0].x = this.x - half;
+                        selectionHandles[0].y = this.y - half;
+                        selectionHandles[1].x = this.x + this.w / 2 - half;
+                        selectionHandles[1].y = this.y - half;
+                        selectionHandles[2].x = this.x + this.w - half;
+                        selectionHandles[2].y = this.y - half;
+                        selectionHandles[3].x = this.x - half;
+                        selectionHandles[3].y = this.y + this.h / 2 - half;
+                        selectionHandles[4].x = this.x + this.w - half;
+                        selectionHandles[4].y = this.y + this.h / 2 - half;
+                        selectionHandles[6].x = this.x + this.w / 2 - half;
+
+                        selectionHandles[6].y = this.y + this.h - half;
+                        selectionHandles[5].x = this.x - half;
+                        selectionHandles[5].y = this.y + this.h - half;
+                        selectionHandles[7].x = this.x + this.w - half;
+                        selectionHandles[7].y = this.y + this.h - half;
+                        context.fillStyle = mySelBoxColor;
+                        for (var i = 0; i < 8; i++)
+                        {
+                            var cur = selectionHandles[i];
+                            context.fillRect(cur.x, cur.y, mySelBoxSize, mySelBoxSize);
+                        }
+                    }
+                }
+            }
+            function addRect(x, y, w, h, fill,tool) {
+                
+                var rect = new Box2;
+                
+                rect.x = x;
+                rect.y = y;
+                rect.w = w
+                rect.h = h;
+                rect.fill = fill;
+                rect.tool = tool;
+                boxes2.push(rect);
+                invalidate();
+            }
+            function init2()
+            {
+                canvas = document.getElementById('canvas2');
+                HEIGHT = canvas.height;
+                WIDTH = canvas.width;
+                ctx = canvas.getContext('2d');
+                ghostcanvas = document.createElement('canvas');
+                ghostcanvas.height = HEIGHT;
+                ghostcanvas.width = WIDTH;
+                gctx = ghostcanvas.getContext('2d');
+                canvas.onselectstart = function () { return false; }//
+
+                if (document.defaultView && document.defaultView.getComputedStyle)
+                {
+                    stylePaddingLeft = parseInt(document.defaultView.getComputedStyle(canvas, null)['paddingLeft'], 10) || 0;
+                    stylePaddingTop = parseInt(document.defaultView.getComputedStyle(canvas, null)['paddingTop'], 10) || 0;
+                    styleBorderLeft = parseInt(document.defaultView.getComputedStyle(canvas, null)['borderLeftWidth'], 10) || 0;
+                    styleBorderTop = parseInt(document.defaultView.getComputedStyle(canvas, null)['borderTopWidth'], 10) || 0;
+                }
+                setInterval(mainDraw, INTERVAL);
+                canvas.onmousedown = myDown;
+                canvas.onmouseup = myUp;
+                canvas.ondblclick = myDblClick;
+                canvas.onmousemove = myMove;
+
+                for (var i = 0; i < 8; i++) {
+                    var rect = new Box2;
+                    selectionHandles.push(rect);
+
+                }
+                addRect(260, 70, 60, 65, 'rgba(0,205,0,0.7)',currenttool);
+                addRect(240, 120, 40, 40, 'rgba(2,165,165,0.7)',currenttool);
+                addRect(45, 60, 25, 25, 'rgba(150,150,250,0.7)',currenttool);
+            }
+            function clear(c) {
+                c.clearRect(0, 0, WIDTH, HEIGHT);
+
+            }
+ function mainDraw()
+{
+    if (canvasValid == false) {
+        clear(ctx);
+        var l = boxes2.length;
+        for (var i = 0; i < l; i++) { if (!boxes2[i].deleted) {  boxes2[i].draw(ctx);} }//
+        canvasValid = true;
+    }
+ }
+ function DrawPen(path) {
+     if (path.length < 1)
+         return;
+
+     ctx.strokeStyle = 'rgba(0, 100, 0, 0.25)';
+     ctx.lineCap = 'round';
+     ctx.lineJoin = 'round';
+     ctx.lineWidth = 6;
+     ctx.beginPath();
+     ctx.moveTo(path[0].x, path[0].y);
+
+     for (var j = 1; j < path.length; ++j)
+         ctx.lineTo(path[j].x, path[j].y);
+
+     ctx.stroke();
+ }
+ function myMove(e) {
+     if (true) {
+         getMouse(e);
+         alert("mouse move");
+         if (expectResize !== -1) {
+             isResizeDrag = true;
+             return;
+         }
+         clear(gctx);
+         var l = boxes2.length;
+         for (var i = l - 1; i >= 0; i--) {
+             boxes2[i].draw(gctx, 'black');
+             var imageData = gctx.getImageData(mx, my, 1, 1);
+             var index = (mx + my * imageData.width) * 4; if (imageData.data[3] > 0) {
+
+                 mySel = boxes2[i];
+                 if (currenttool == "delete") {
+                     boxes2[i].deleted = true;
+                 }
+                 currentbox = i;
+                 offsetx = mx - mySel.x;
+                 offsety = my - mySel.y;
+                 mySel.x = mx - offsetx;
+                 mySel.y = my - offsety;
+                 isDrag = true;
+                 invalidate();
+                 clear(gctx);
+                 return;
+             }
+         }
+
+     }
+     if (isDrag) {
+         getMouse(e);
+         if (mySel != null) {
+             mySel.x = mx - offsetx; mySel.y = my - offsety; invalidate();
+         }
+         if (currenttool == "pen") {
+             pos = getMouse(e);
+
+             currentpaths[paths.length - 1].push(pos); // Append point tu current path.
+             DrawPen(currentpaths);
+         }
+     } else if (isResizeDrag) {
+         var oldx = mySel.x; var oldy = mySel.y; switch (expectResize) {
+             case 0: mySel.x = mx;
+                 mySel.y = my;
+                 mySel.w += oldx - mx;
+                 mySel.h += oldy - my;
+                 break; case 1: mySel.y = my;
+                     mySel.h += oldy - my; break;
+             case 2: mySel.y = my;
+                 mySel.w = mx - oldx;
+                 mySel.h += oldy - my;
+                 break; case 3: mySel.x = mx;
+                     mySel.w += oldx - mx; break
+                     ; case 4: mySel.w = mx - oldx;
+                         break;
+             case 5: mySel.x = mx;
+                 mySel.w += oldx - mx;
+                 mySel.h = my - oldy;
+                 break; case 6:
+                     mySel.h = my - oldy;
+                     break; case 7: mySel.w = mx - oldx; mySel.h = my - oldy; break;
+         } 
+
+         invalidate();
+     }
+     getMouse(e);
+    
+     if (mySel !== null && !isResizeDrag) {
+         for (var i = 0; i < 8; i++) {
+             var cur = selectionHandles[i];
+             if (mx >= cur.x && mx <= cur.x + mySelBoxSize && my >= cur.y && my <= cur.y + mySelBoxSize) {
+                 expectResize = i; invalidate();
+                 switch (i) {
+                     case 0: this.style.cursor = 'nw-resize';
+                         break; case 1: this.style.cursor = 'n-resize'; break;
+                     case 2: this.style.cursor = 'ne-resize'; break;
+                     case 3: this.style.cursor = 'w-resize'; break;
+                     case 4: this.style.cursor = 'e-resize'; break;
+                     case 5: this.style.cursor = 'sw-resize'; break;
+                     case 6: this.style.cursor = 's-resize'; break;
+                     case 7: this.style.cursor = 'se-resize'; break;
+                 }
+                 return;
+             }
+         }
+         isResizeDrag = false;
+         expectResize = -1;
+         this.style.cursor = 'auto';
+     }
+     
+ }
+ function myDown(e)
+ {
+     if (currenttool == "pen") {
+         var pos = getCursorPosition(e);
+
+         isDrag = true;
+         currentpaths.push([pos]);
+     }
+    else if (currenttool == "select" || currenttool == "delete") {
+         getMouse(e);
+         if (expectResize !== -1) {
+             isResizeDrag = true;
+             return;
+         }
+         clear(gctx);
+         var l = boxes2.length;
+         for (var i = l - 1; i >= 0; i--) {
+             boxes2[i].draw(gctx, 'black');
+             var imageData = gctx.getImageData(mx, my, 1, 1);
+             var index = (mx + my * imageData.width) * 4; if (imageData.data[3] > 0) {
+
+                 mySel = boxes2[i];
+                 if (currenttool == "delete") {
+                     boxes2[i].deleted = true;
+                 }
+                 currentbox = i;
+                 offsetx = mx - mySel.x;
+                 offsety = my - mySel.y;
+                 mySel.x = mx - offsetx;
+                 mySel.y = my - offsety;
+                 isDrag = true;
+                 invalidate();
+                 clear(gctx);
+                 return;
+             }
+         }
+
+     }
+
+
+     else {
+         myDblClick(e);
+         return;  }
+     mySel = null;
+     currentbox = null;
+    clear(gctx);
+    invalidate();
+ }
+
+ function myUp() {
+     isDrag = false;
+     isResizeDrag = false;
+     expectResize = -1;
+ }
+ function myDblClick(e) {
+     getMouse(e);
+     var width = 50;
+     var height = 50;
+     addRect(mx - (width / 2), my - (height / 2), width, height, 'rgba(220,205,65,0.7)',currenttool);
+     currenttool = "select";
+     myDown(e);
+ }
+ function invalidate()
+ {
+     canvasValid = false;
+ }
+ function getMouse(e)
+ {
+     var element = canvas, offsetX = 0, offsetY = 0;
+     if (element.offsetParent) {
+         do {
+             offsetX += element.offsetLeft;
+             offsetY += element.offsetTop;
+         }
+         while ((element = element.offsetParent));
+     }
+     offsetX += stylePaddingLeft;
+     offsetY += stylePaddingTop;
+     offsetX += styleBorderLeft;
+     offsetY += styleBorderTop;
+     mx = e.pageX - offsetX;
+     my = e.pageY - offsetY
+ }
+ window.init2 = init2;
+        }
+        )(window);
+//-->
+    </script>
+</head>
+<body>
+    <div id="container2"><canvas id="canvas2" width="800" height="600"> This text is displayed if your browser does not support HTML5 Canvas. </canvas></div>
+
+    <button onclick="ctool('circle')" id="circle">Circle</button>
+    <button onclick="ctool('rectangle')" id="rectangle">Rectangle</button>
+    <button onclick="ctool('select')" id="rectangle">select</button>
+    <button onclick="ctool('delete')" id="rectangle">delete</button>
+    <button onclick="ctool('pen')" id="rectangle">pen</button>
+
+
+</body>
+</html>

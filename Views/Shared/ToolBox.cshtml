@@ -1,0 +1,70 @@
+﻿
+<div class="container">
+    <div class="row top-control-menu">
+        <!-- tools-->
+        <div class="tool-bar col-md-9 col-xs-12">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs menu-tabs" role="tablist">
+                <li role="presentation" class="active">
+                    <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Drawing</a>
+                </li>
+                @*<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Mailing</a></li>
+                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Folder</a></li>
+                    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">View</a></li>*@
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active" id="home">
+                    <ul class="list-inline drawing">
+                        <li>
+                            <a onclick="ctool('pen')" href="#"><img src="~/content/assets/images/pencil_1.png" alt="" /></a>
+                        </li>
+                        <li>
+                            <a onclick="ctool('rectangle')" href="#"><img src="~/content/assets/images/square.png" alt="" /></a>
+                        </li>
+                        <li>
+                            <a onclick="ctool('circle')" href="#"><img src="~/content/assets/images/cir_1.png" alt="" /></a>
+                        </li>
+                        <li>
+                            <a onclick="ctool('line')" href="#"><img src="~/content/assets/images/line_1.png" alt="" /></a>
+                        </li>
+                        <li>
+                            <a onclick="ctool('text')" href="#"><img src="~/content/assets/images/text.png" alt="" /></a>
+                        </li>
+                        <li>
+                            <a onclick="boardctx.playTimeLine()" href="#"><img src="~/content/assets/images/text.png" alt="" /></a>
+                        </li>
+                        <li>
+                            <a href="~/Home/CloseBoard?room=4"><img src="~/content/assets/images/close.png" alt="" /></a>
+                        </li>
+                        <li>
+    <a href="#openModal"  ><img src="~/content/assets/images/close.png" alt="" /></a>
+</li>
+                        <li>
+                            <input type="file" name="UploadFile" id="txtUploadFile" class="makethispretty" />
+                            @*<li>
+                                    <div id="colorPicker">
+                                        <a class="color"><div class="colorInner"></div></a>
+                                        <div class="track"></div>
+                                        <ul class="dropdown"><li></li></ul>
+                                        <input type="hidden" class="colorInput" />
+                                    </div>
+
+                                </li>*@
+                        </li>
+                    </ul>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="profile">hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</div>
+                <div role="tabpanel" class="tab-pane fade" id="messages">kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</div>
+                <div role="tabpanel" class="tab-pane fade" id="settings">..jjjjjjjjjjjjjjjjjjj.</div>
+            </div>
+
+        </div>
+        <div class="camera col-md-3 col-xs-12">
+
+            <div id="vid-box"></div>
+        </div>
+    </div>
+</div>

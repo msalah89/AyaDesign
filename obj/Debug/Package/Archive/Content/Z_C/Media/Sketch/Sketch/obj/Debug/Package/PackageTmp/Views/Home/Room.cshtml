@@ -1,0 +1,219 @@
+﻿@{
+    Layout = null;
+
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Chalkifi</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="~/Content/chalkifiassetes/images/icon.png">
+
+    <!--bootstrap -->
+    <link href="~/Content/chalkifiassetes/css/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!--fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Walter+Turncoat' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>
+    <!--js files-->
+    <script src="~/Content/chalkifiassetes/js/jquery/jquery.js" type="text/javascript"></script>
+    <script src="~/Content/chalkifiassetes/js/jquery/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="~/Content/chalkifiassetes/js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+    <script src="~/Content/chalkifiassetes/js/myjs.js" type="text/javascript"></script>
+    <!--tabs-->
+    <link href="~/Content/chalkifiassetes/css/tabs/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/chalkifiassetes/css/tabs/tabs.css" rel="stylesheet" type="text/css" />
+    <!--my style -->
+    <link href="~/Content/chalkifiassetes/css/board.css" rel="stylesheet" type="text/css" />
+    <script src="~/Content/chalkifiassetes/js/tabs/modernizr.custom.js" type="text/javascript"></script>
+    <link href="~/Content/colorpicker/tinycolorpicker.css" rel="stylesheet" />
+
+    <script src="~/Content/colorpicker/jquery.tinycolorpicker.js"></script>
+    <script>
+        var room = '@ViewBag.Room';
+        var username = 'Mohammed Salah';
+        var ismain = '@ViewBag.IsMain';
+
+    </script>
+    <script src="~/Scripts/jsend-2.0.0.source.js"></script>
+    <script src="~/Scripts/jquery.signalR-2.0.3.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+
+    @Scripts.Render("~/bundles/roombundle")
+
+
+</head>
+<body class="fill">
+   
+    <nav class="menu" tabindex="0">
+        <div class='inner-menu'>
+            <div class="smartphone-menu-trigger"></div>
+            <header class="avatar">
+
+                <h2>Your Boards</h2>
+            </header>
+            <ul class="hover01" id="slidemenu">
+                <li slide="0" class="small-board">
+                    <figure><img src="~/Content/chalkifiassetes/images/oavv3DC (1).jpg" alt="" /></figure>
+                </li>
+
+            </ul>
+        </div>
+        <div class='add-slide'> <a onclick="boardctx.newslide()" class="add-new" href="#" role="button">Add new board</a></div>
+
+    </nav>
+
+
+    <div class="board">
+        <section class="fill">
+            <div class="tabs tabs-style-bar fill">
+                <nav>
+                    <ul>
+                        <li><a href="#section-bar-1"><span>Drawing</span></a></li>
+                        <li><a href="#section-bar-2"><span>Mailing</span></a></li>
+                        <li><a href="#section-bar-3"><span>Folder</span></a></li>
+                        <li><a href="#section-bar-4"><span>view</span></a></li>
+                        <li><a href="#section-bar-5"><span>Settings</span></a></li>
+                    </ul>
+
+                </nav>
+                <div class="content-wrap">
+                    <section id="section-bar-1" class="tab1">
+                        <ul class="drawing">
+                            <li>
+                                <a href="#" onclick="ctool('pen');" class="toolbtn pincle"><img src="~/Content/chalkifiassetes/images/pincle3.png" alt="" /></a>
+                            </li>
+
+                            <li>
+                                <a href="#" onclick="ctool('text')" class="toolbtn text"><img src="~/Content/chalkifiassetes/images/text.png" alt="" /></a>
+                            </li>
+
+                            <li>
+                                <a href="#" onclick="ctool('rectangle')" class="toolbtn square"><img src="~/Content/chalkifiassetes/images/square2.png" alt="" /></a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="ctool('circle')" class="toolbtn circle"><img src="~/Content/chalkifiassetes/images/circule2.png" alt="" /></a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="ctool('line')" class="toolbtn line"><img src="~/Content/chalkifiassetes/images/line2.png" alt="" /></a>
+                            </li>
+                           
+  <li>is fill
+                                <input type="checkbox" checked="checked" onchange="updateFill()" id="isfill" />
+
+                                 <div id="bgColor" class="colorPicker">
+                                    <a class="color"><div class="colorInner"></div></a>
+                                    <div class="track"></div>
+                                    <ul class="dropdown"><li></li></ul>
+                                    <input type="hidden" onchange="boardctx.setbackColor(this.value);" class="colorInput" />
+                                </div>
+
+                            </li>
+                           
+                        </ul>
+                    </section>
+                    <section id="section-bar-2">
+						<ul class="drawing">
+
+							<li>
+                                <a href="#" onclick="ctool('svg_'+'~/Content/chalkifiassetes/sumof.svg')" style="fill:white; stroke:white" class="toolbtn line"><img class="svg" style="fill:white;" src="~/Content/chalkifiassetes/sumof.svg" alt="" /></a>
+                            </li>
+							
+						</ul>							
+						
+					</section>
+                    <section id="section-bar-3"></section>
+                    <section id="section-bar-4"></section>
+                    <section id="section-bar-5"></section>
+                </div><!-- /content -->
+
+                <div class="container-fluid fill">
+                    <div class="row fill">
+                        <div class="col-md-9 canvascontainer" style="min-height:800px">
+                            <canvas id="canvas2"></canvas>
+                        </div>
+                        <div class="col-md-3 ">
+
+                            <div id="chat">
+                                <div id="camera"></div>
+                                <div id="chatroom">
+
+                                    <div style="z-index: 100;position: absolute;right: 0;" id="divContainer">
+                                        <div id="divLogin" class="login">
+                                            <div>
+                                                Your Name:
+                                                <br />
+                                                <input id="txtNickName" type="text" class="textBox" />
+                                            </div>
+                                            <div id="divButton">
+                                                <input id="btnStartChat" type="button" class="submitButton" value="Start Chat" />
+                                            </div>
+                                        </div>
+
+                                        <div id="divChat" class="chatRoom" style="height:200px;">
+                                            <div class="title" style="background-color:transparent;">
+                                                Welcome [<span id='spanUser'></span>]
+
+                                            </div>
+                                            <div class="content">
+                                                <div id="divChatWindow" class="chatWindow">
+                                                </div>
+                                                <div id="divusers" class="users" style="display:none;">
+                                                </div>
+                                            </div>
+                                            <div class="messageBar">
+                                                <span class="input input--isao">
+                                                    <input class="input__field input__field--isao" type="text" id="txtMessage" />
+                                                    <label class="input__label input__label--isao" for="txtMessage">
+                                                        <span class="input__label input__label--isao">Write Text Here</span>
+                                                    </label>
+                                                </span>
+
+                                                <input id="btnSendMsg" style="display:none;" type="button" value="Send" class="submitButton" />
+                                            </div>
+                                        </div>
+
+                                        <input id="hdId" type="hidden" />
+                                        <input id="hdUserName" type="hidden" />
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- /tabs -->
+                <a class="btn btn-default back-home" href="fullpage.html" role="button">HOME</a>
+            </div>
+        </section>
+
+    </div>
+    <script src="~/Content/chalkifiassetes/js/tabs/cbpFWTabs.js" type="text/javascript"></script>
+    <script>
+
+    </script>
+    @Scripts.Render("~/bundles/roomboard")
+
+
+    <script src="https://cdn.pubnub.com/pubnub.min.js"></script>
+
+    <script src="~/Content/rtc/js/webrtc.js"></script>
+
+    <script src="~/Content/rtc/js/rtc-controller.js"></script>
+    <script src="~/Content/rtc/js/videortc.js"></script>
+
+
+
+
+
+</body>
+
+
+</html>

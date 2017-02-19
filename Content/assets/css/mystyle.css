@@ -1,0 +1,114 @@
+@import url(https://fonts.googleapis.com/css?family=Amatic+SC:400,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800);
+body {
+  background: url("../images/oavv3DC.jpg") 0 0 repeat; }
+  body #showLeft {
+    display: none; }
+  body #side-menu-triangel {
+    position: relative; }
+    body #side-menu-triangel .arrow-right {
+      width: 0;
+      height: 0;
+      border-top: 40px solid transparent;
+      border-bottom: 40px solid transparent;
+      border-left: 40px solid #59cbe3;
+      position: fixed;
+      margin-top: 50px;
+      z-index: 100; }
+      body #side-menu-triangel .arrow-right:hover {
+        border-left: 40px solid #65E2FC; }
+  body .cbp-spmenu {
+    background: #59cbe3; }
+    body .cbp-spmenu h2 {
+      font-family: 'Amatic SC', cursive;
+      font-size: 45px;
+      font-weight: 700;
+      color: white;
+      padding-left: 20px;
+      background-color: #65E2FC; }
+    body .cbp-spmenu a {
+      border-bottom: 1px solid #51B6CB;
+      padding-bottom: 0px;
+      }
+    body .cbp-spmenu .thumbnail {
+      background-color: transparent;
+      border: none;
+      margin-bottom: 0px;
+      padding: 0px;
+      }
+      body .cbp-spmenu .thumbnail img {
+        width: 150px;
+        height: 100px;
+        }
+      body .cbp-spmenu .thumbnail p {
+        text-align: center;
+        color: white;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300; }
+  body .cbp-spmenu a:hover {
+    background: #65E2FC;
+    color: white; }
+  body .cbp-spmenu a:active {
+    background: #65E2FC;
+    color: white; }
+  body .cbp-spmenu a:click {
+    background: #65E2FC;
+    color: white; }
+  body .cbp-spmenu a:focus {
+    background: #65E2FC;
+    color: white; }
+  body .top-control-menu .tool-bar {
+    border-right: 1px solid #4E4C4C;
+    padding-bottom: 20px; }
+    body .top-control-menu .tool-bar .menu-tabs {
+      border-bottom-color: #4E4C4C;
+      background-color: transparent;
+      font-family: 'Amatic SC', cursive;
+      font-size: 20px;
+      font-weight: 700; }
+      body .top-control-menu .tool-bar .menu-tabs a {
+        padding-top: 5px;
+        padding-bottom: 5px; }
+      body .top-control-menu .tool-bar .menu-tabs a:hover {
+        background: url("../images/bg_pattern.png") 0 0 repeat;
+        color: #59cbe3; }
+      body .top-control-menu .tool-bar .menu-tabs a:active {
+        background-color: transparent;
+        background: url("../images/bg_pattern.png") 0 0 repeat;
+        color: grey; }
+      body .top-control-menu .tool-bar .menu-tabs a:focus {
+        background: url("../images/bg_pattern.png") 0 0 repeat;
+        color: #59cbe3; }
+    body .top-control-menu .tool-bar .tab-content {
+      color: white; }
+      body .top-control-menu .tool-bar .tab-content .drawing {
+        padding-top: 10px;
+        padding-left: 20px; }
+
+.divider {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin: 0px auto 10px;
+  text-align: center; }
+  .divider .line {
+    margin: 15px 0 0;
+    display: block;
+    height: 1px;
+    width: 45%;
+    float: left;
+    background: #bdc3c7;
+    opacity: 0.5; }
+  .divider .iconImg {
+    float: left;
+    font-size: 24px;
+    width: 10%; }
+  .divider .glyphicon {
+    color: grey; }
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 992px) {
+  body .top-control-menu .tool-bar .menu-tabs {
+    font-size: 24px; } }
+
+/*# sourceMappingURL=mystyle.css.map */

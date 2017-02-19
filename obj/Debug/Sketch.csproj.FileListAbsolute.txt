@@ -1,0 +1,600 @@
+D:\CoursatuSktetch\Sketch\Sketch\bin\Sketch.dll.config
+D:\CoursatuSktetch\Sketch\Sketch\bin\Sketch.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\Sketch.pdb
+D:\CoursatuSktetch\Sketch\Sketch\bin\Antlr3.Runtime.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\EntityFramework.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\EntityFramework.SqlServer.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Core.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\Microsoft.Owin.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\Microsoft.Owin.Security.Cookies.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\Microsoft.Owin.Security.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\Microsoft.Owin.Security.Facebook.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\Microsoft.Owin.Security.Google.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\Microsoft.Owin.Security.OAuth.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\Microsoft.Owin.Security.Twitter.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\Microsoft.Web.Infrastructure.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\Newtonsoft.Json.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\Owin.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\System.Net.Http.Formatting.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\System.Web.Helpers.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\System.Web.Http.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\System.Web.Http.WebHost.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\System.Web.Mvc.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\System.Web.Optimization.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\System.Web.Razor.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\System.Web.WebPages.Deployment.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\System.Web.WebPages.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\System.Web.WebPages.Razor.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\WebGrease.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\System.Web.Helpers.xml
+D:\CoursatuSktetch\Sketch\Sketch\bin\System.Web.Mvc.xml
+D:\CoursatuSktetch\Sketch\Sketch\bin\System.Web.Optimization.xml
+D:\CoursatuSktetch\Sketch\Sketch\bin\System.Web.Razor.xml
+D:\CoursatuSktetch\Sketch\Sketch\bin\System.Web.WebPages.xml
+D:\CoursatuSktetch\Sketch\Sketch\bin\System.Web.WebPages.Deployment.xml
+D:\CoursatuSktetch\Sketch\Sketch\bin\System.Web.WebPages.Razor.xml
+D:\CoursatuSktetch\Sketch\Sketch\bin\Newtonsoft.Json.xml
+D:\CoursatuSktetch\Sketch\Sketch\bin\Antlr3.Runtime.pdb
+D:\CoursatuSktetch\Sketch\Sketch\bin\System.Net.Http.Formatting.xml
+D:\CoursatuSktetch\Sketch\Sketch\bin\System.Web.Http.xml
+D:\CoursatuSktetch\Sketch\Sketch\bin\System.Web.Http.WebHost.xml
+D:\CoursatuSktetch\Sketch\Sketch\bin\EntityFramework.xml
+D:\CoursatuSktetch\Sketch\Sketch\bin\EntityFramework.SqlServer.xml
+D:\CoursatuSktetch\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Core.xml
+D:\CoursatuSktetch\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\CoursatuSktetch\Sketch\Sketch\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\CoursatuSktetch\Sketch\Sketch\bin\Microsoft.Owin.xml
+D:\CoursatuSktetch\Sketch\Sketch\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\CoursatuSktetch\Sketch\Sketch\bin\Microsoft.Owin.Security.xml
+D:\CoursatuSktetch\Sketch\Sketch\bin\Microsoft.Owin.Security.Facebook.xml
+D:\CoursatuSktetch\Sketch\Sketch\bin\Microsoft.Owin.Security.Cookies.xml
+D:\CoursatuSktetch\Sketch\Sketch\bin\Microsoft.Owin.Security.OAuth.xml
+D:\CoursatuSktetch\Sketch\Sketch\bin\Microsoft.Owin.Security.Google.xml
+D:\CoursatuSktetch\Sketch\Sketch\bin\Microsoft.Owin.Security.Twitter.xml
+D:\CoursatuSktetch\Sketch\Sketch\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\CoursatuSktetch\Sketch\Sketch\obj\Debug\Sketch.dll
+D:\CoursatuSktetch\Sketch\Sketch\obj\Debug\Sketch.pdb
+D:\CoursatuSktetch\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\CoursatuSktetch\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\CoursatuSktetch\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\CoursatuSktetch\Sketch\Sketch\obj\Debug\Sketch.csprojResolveAssemblyReference.cache
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Sketch.dll.config
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Sketch.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Sketch.pdb
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Antlr3.Runtime.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\AWSSDK.Core.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\AWSSDK.S3.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\EntityFramework.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\EntityFramework.SqlServer.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Core.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Security.Cookies.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Security.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Security.Facebook.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Security.Google.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Security.OAuth.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Security.Twitter.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Web.Infrastructure.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\NAudio.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Newtonsoft.Json.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\NLayer.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\NLayer.NAudioSupport.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Owin.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\System.Net.Http.Formatting.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.Helpers.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.Http.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.Http.WebHost.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.Mvc.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.Optimization.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.Razor.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.WebPages.Deployment.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.WebPages.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.WebPages.Razor.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\WebGrease.dll
+D:\CoursatuSktetch2\Sketch\Sketch\bin\AWSSDK.Core.xml
+D:\CoursatuSktetch2\Sketch\Sketch\bin\AWSSDK.S3.xml
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.xml
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Security.xml
+D:\CoursatuSktetch2\Sketch\Sketch\bin\NLayer.pdb
+D:\CoursatuSktetch2\Sketch\Sketch\bin\NLayer.NAudioSupport.pdb
+D:\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.Helpers.xml
+D:\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.Mvc.xml
+D:\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.Optimization.xml
+D:\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.Razor.xml
+D:\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.WebPages.xml
+D:\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.WebPages.Deployment.xml
+D:\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.WebPages.Razor.xml
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Newtonsoft.Json.xml
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Antlr3.Runtime.pdb
+D:\CoursatuSktetch2\Sketch\Sketch\bin\System.Net.Http.Formatting.xml
+D:\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.Http.xml
+D:\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.Http.WebHost.xml
+D:\CoursatuSktetch2\Sketch\Sketch\bin\EntityFramework.xml
+D:\CoursatuSktetch2\Sketch\Sketch\bin\EntityFramework.SqlServer.xml
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Core.xml
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Security.Facebook.xml
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Security.Cookies.xml
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Security.OAuth.xml
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Security.Google.xml
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Security.Twitter.xml
+D:\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\CoursatuSktetch2\Sketch\Sketch\obj\Debug\Sketch.dll
+D:\CoursatuSktetch2\Sketch\Sketch\obj\Debug\Sketch.pdb
+D:\CoursatuSktetch2\Sketch\Sketch\obj\Debug\Sketch.csprojResolveAssemblyReference.cache
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Sketch.dll.config
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Sketch.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Sketch.pdb
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Antlr3.Runtime.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\EntityFramework.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\EntityFramework.SqlServer.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Core.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Owin.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.Core.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Host.SystemWeb.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Security.Cookies.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Security.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Security.Facebook.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Security.Google.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Security.OAuth.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Security.Twitter.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Web.Infrastructure.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Newtonsoft.Json.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Owin.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\System.Net.Http.Formatting.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.Helpers.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.Http.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.Http.WebHost.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.Mvc.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.Optimization.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.Razor.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.WebPages.Deployment.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.WebPages.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.WebPages.Razor.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\WebGrease.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\AWSSDK.Core.xml
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\AWSSDK.S3.xml
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.Core.xml
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.xml
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Host.SystemWeb.xml
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Security.xml
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\NLayer.pdb
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\NLayer.NAudioSupport.pdb
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.Helpers.xml
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.Mvc.xml
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.Optimization.xml
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.Razor.xml
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.WebPages.xml
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.WebPages.Deployment.xml
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.WebPages.Razor.xml
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Newtonsoft.Json.xml
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Antlr3.Runtime.pdb
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\System.Net.Http.Formatting.xml
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.Http.xml
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\System.Web.Http.WebHost.xml
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\EntityFramework.xml
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\EntityFramework.SqlServer.xml
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Core.xml
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Owin.xml
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Security.Facebook.xml
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Security.Cookies.xml
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Security.OAuth.xml
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Security.Google.xml
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Security.Twitter.xml
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\obj\Debug\Sketch.csprojResolveAssemblyReference.cache
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\obj\Debug\Sketch.dll
+Z:\daadpub\CoursatuSktetch2\Sketch\Sketch\obj\Debug\Sketch.pdb
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Sketch.dll.config
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Sketch.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Sketch.pdb
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Antlr3.Runtime.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\EntityFramework.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\EntityFramework.SqlServer.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Microsoft.Owin.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Microsoft.Owin.Security.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Newtonsoft.Json.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Owin.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\System.Net.Http.Formatting.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\System.Web.Helpers.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\System.Web.Http.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\System.Web.Http.WebHost.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\System.Web.Mvc.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\System.Web.Optimization.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\System.Web.Razor.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\System.Web.WebPages.Deployment.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\System.Web.WebPages.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\System.Web.WebPages.Razor.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\WebGrease.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Microsoft.Owin.xml
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Microsoft.Owin.Security.xml
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\System.Web.Helpers.xml
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\System.Web.Mvc.xml
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\System.Web.Optimization.xml
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\System.Web.Razor.xml
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\System.Web.WebPages.xml
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\System.Web.WebPages.Deployment.xml
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\System.Web.WebPages.Razor.xml
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Newtonsoft.Json.xml
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Antlr3.Runtime.pdb
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\System.Net.Http.Formatting.xml
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\System.Web.Http.xml
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\System.Web.Http.WebHost.xml
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\EntityFramework.xml
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\EntityFramework.SqlServer.xml
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\msalah89\Desktop\Sketch\Sketch\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\msalah89\Desktop\Sketch\Sketch\obj\Debug\Sketch.dll
+C:\Users\msalah89\Desktop\Sketch\Sketch\obj\Debug\Sketch.pdb
+C:\Users\msalah89\Desktop\Sketch\Sketch\obj\Debug\Sketch.csprojResolveAssemblyReference.cache
+Z:\Media\Sketch\Sketch\bin\Sketch.dll.config
+Z:\Media\Sketch\Sketch\bin\Sketch.dll
+Z:\Media\Sketch\Sketch\bin\Sketch.pdb
+Z:\Media\Sketch\Sketch\bin\Antlr3.Runtime.dll
+Z:\Media\Sketch\Sketch\bin\EntityFramework.dll
+Z:\Media\Sketch\Sketch\bin\EntityFramework.SqlServer.dll
+Z:\Media\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Core.dll
+Z:\Media\Sketch\Sketch\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+Z:\Media\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Owin.dll
+Z:\Media\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.Core.dll
+Z:\Media\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+Z:\Media\Sketch\Sketch\bin\Microsoft.Owin.dll
+Z:\Media\Sketch\Sketch\bin\Microsoft.Owin.Host.SystemWeb.dll
+Z:\Media\Sketch\Sketch\bin\Microsoft.Owin.Security.Cookies.dll
+Z:\Media\Sketch\Sketch\bin\Microsoft.Owin.Security.dll
+Z:\Media\Sketch\Sketch\bin\Microsoft.Owin.Security.Facebook.dll
+Z:\Media\Sketch\Sketch\bin\Microsoft.Owin.Security.Google.dll
+Z:\Media\Sketch\Sketch\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+Z:\Media\Sketch\Sketch\bin\Microsoft.Owin.Security.OAuth.dll
+Z:\Media\Sketch\Sketch\bin\Microsoft.Owin.Security.Twitter.dll
+Z:\Media\Sketch\Sketch\bin\Microsoft.Web.Infrastructure.dll
+Z:\Media\Sketch\Sketch\bin\Newtonsoft.Json.dll
+Z:\Media\Sketch\Sketch\bin\Owin.dll
+Z:\Media\Sketch\Sketch\bin\System.Net.Http.Formatting.dll
+Z:\Media\Sketch\Sketch\bin\System.Web.Helpers.dll
+Z:\Media\Sketch\Sketch\bin\System.Web.Http.dll
+Z:\Media\Sketch\Sketch\bin\System.Web.Http.WebHost.dll
+Z:\Media\Sketch\Sketch\bin\System.Web.Mvc.dll
+Z:\Media\Sketch\Sketch\bin\System.Web.Optimization.dll
+Z:\Media\Sketch\Sketch\bin\System.Web.Razor.dll
+Z:\Media\Sketch\Sketch\bin\System.Web.WebPages.Deployment.dll
+Z:\Media\Sketch\Sketch\bin\System.Web.WebPages.dll
+Z:\Media\Sketch\Sketch\bin\System.Web.WebPages.Razor.dll
+Z:\Media\Sketch\Sketch\bin\WebGrease.dll
+Z:\Media\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.Core.xml
+Z:\Media\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+Z:\Media\Sketch\Sketch\bin\Microsoft.Owin.xml
+Z:\Media\Sketch\Sketch\bin\Microsoft.Owin.Host.SystemWeb.xml
+Z:\Media\Sketch\Sketch\bin\Microsoft.Owin.Security.xml
+Z:\Media\Sketch\Sketch\bin\System.Web.Helpers.xml
+Z:\Media\Sketch\Sketch\bin\System.Web.Mvc.xml
+Z:\Media\Sketch\Sketch\bin\System.Web.Optimization.xml
+Z:\Media\Sketch\Sketch\bin\System.Web.Razor.xml
+Z:\Media\Sketch\Sketch\bin\System.Web.WebPages.xml
+Z:\Media\Sketch\Sketch\bin\System.Web.WebPages.Deployment.xml
+Z:\Media\Sketch\Sketch\bin\System.Web.WebPages.Razor.xml
+Z:\Media\Sketch\Sketch\bin\Newtonsoft.Json.xml
+Z:\Media\Sketch\Sketch\bin\Antlr3.Runtime.pdb
+Z:\Media\Sketch\Sketch\bin\System.Net.Http.Formatting.xml
+Z:\Media\Sketch\Sketch\bin\System.Web.Http.xml
+Z:\Media\Sketch\Sketch\bin\System.Web.Http.WebHost.xml
+Z:\Media\Sketch\Sketch\bin\EntityFramework.xml
+Z:\Media\Sketch\Sketch\bin\EntityFramework.SqlServer.xml
+Z:\Media\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Core.xml
+Z:\Media\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Owin.xml
+Z:\Media\Sketch\Sketch\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+Z:\Media\Sketch\Sketch\bin\Microsoft.Owin.Security.Facebook.xml
+Z:\Media\Sketch\Sketch\bin\Microsoft.Owin.Security.Cookies.xml
+Z:\Media\Sketch\Sketch\bin\Microsoft.Owin.Security.OAuth.xml
+Z:\Media\Sketch\Sketch\bin\Microsoft.Owin.Security.Google.xml
+Z:\Media\Sketch\Sketch\bin\Microsoft.Owin.Security.Twitter.xml
+Z:\Media\Sketch\Sketch\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+Z:\Media\Sketch\Sketch\obj\Debug\Sketch.dll
+Z:\Media\Sketch\Sketch\obj\Debug\Sketch.pdb
+Z:\Media\Sketch\Sketch\obj\Debug\Sketch.csprojResolveAssemblyReference.cache
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Sketch.dll.config
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Sketch.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Sketch.pdb
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Antlr3.Runtime.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\EntityFramework.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\EntityFramework.SqlServer.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Core.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Owin.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.Core.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Microsoft.Owin.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Microsoft.Owin.Host.SystemWeb.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Microsoft.Owin.Security.Cookies.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Microsoft.Owin.Security.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Microsoft.Owin.Security.Facebook.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Microsoft.Owin.Security.Google.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Microsoft.Owin.Security.OAuth.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Microsoft.Owin.Security.Twitter.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Microsoft.Web.Infrastructure.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Newtonsoft.Json.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Owin.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\System.Net.Http.Formatting.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\System.Web.Helpers.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\System.Web.Http.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\System.Web.Http.WebHost.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\System.Web.Mvc.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\System.Web.Optimization.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\System.Web.Razor.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\System.Web.WebPages.Deployment.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\System.Web.WebPages.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\System.Web.WebPages.Razor.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\WebGrease.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.Core.xml
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Microsoft.Owin.xml
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Microsoft.Owin.Host.SystemWeb.xml
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Microsoft.Owin.Security.xml
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\System.Web.Helpers.xml
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\System.Web.Mvc.xml
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\System.Web.Optimization.xml
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\System.Web.Razor.xml
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\System.Web.WebPages.xml
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\System.Web.WebPages.Deployment.xml
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\System.Web.WebPages.Razor.xml
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Newtonsoft.Json.xml
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Antlr3.Runtime.pdb
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\System.Net.Http.Formatting.xml
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\System.Web.Http.xml
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\System.Web.Http.WebHost.xml
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\EntityFramework.xml
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\EntityFramework.SqlServer.xml
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Core.xml
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Owin.xml
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Microsoft.Owin.Security.Facebook.xml
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Microsoft.Owin.Security.Cookies.xml
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Microsoft.Owin.Security.OAuth.xml
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Microsoft.Owin.Security.Google.xml
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Microsoft.Owin.Security.Twitter.xml
+\\MACBOOKPRO-A9A0\Sketch\Sketch\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+\\MACBOOKPRO-A9A0\Sketch\Sketch\obj\Debug\Sketch.csprojResolveAssemblyReference.cache
+\\MACBOOKPRO-A9A0\Sketch\Sketch\obj\Debug\Sketch.dll
+\\MACBOOKPRO-A9A0\Sketch\Sketch\obj\Debug\Sketch.pdb
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Sketch.dll.config
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Sketch.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Sketch.pdb
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Antlr3.Runtime.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\EntityFramework.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\EntityFramework.SqlServer.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Core.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Owin.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.Core.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Microsoft.Owin.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Microsoft.Owin.Host.SystemWeb.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Microsoft.Owin.Security.Cookies.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Microsoft.Owin.Security.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Microsoft.Owin.Security.Facebook.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Microsoft.Owin.Security.Google.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Microsoft.Owin.Security.OAuth.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Microsoft.Owin.Security.Twitter.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Microsoft.Web.Infrastructure.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Newtonsoft.Json.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Owin.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\System.Net.Http.Formatting.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\System.Web.Helpers.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\System.Web.Http.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\System.Web.Http.WebHost.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\System.Web.Mvc.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\System.Web.Optimization.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\System.Web.Razor.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\System.Web.WebPages.Deployment.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\System.Web.WebPages.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\System.Web.WebPages.Razor.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\WebGrease.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.Core.xml
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Microsoft.Owin.xml
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Microsoft.Owin.Host.SystemWeb.xml
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Microsoft.Owin.Security.xml
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\System.Web.Helpers.xml
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\System.Web.Mvc.xml
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\System.Web.Optimization.xml
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\System.Web.Razor.xml
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\System.Web.WebPages.xml
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\System.Web.WebPages.Deployment.xml
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\System.Web.WebPages.Razor.xml
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Newtonsoft.Json.xml
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Antlr3.Runtime.pdb
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\System.Net.Http.Formatting.xml
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\System.Web.Http.xml
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\System.Web.Http.WebHost.xml
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\EntityFramework.xml
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\EntityFramework.SqlServer.xml
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Core.xml
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Owin.xml
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Microsoft.Owin.Security.Facebook.xml
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Microsoft.Owin.Security.Cookies.xml
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Microsoft.Owin.Security.OAuth.xml
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Microsoft.Owin.Security.Google.xml
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Microsoft.Owin.Security.Twitter.xml
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\obj\Debug\Sketch.csprojResolveAssemblyReference.cache
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\obj\Debug\Sketch.dll
+\\vmware-host\Shared Folders\msalah89\Documents\Sketch\Sketch\obj\Debug\Sketch.pdb
+C:\Sketch\Sketch\bin\Sketch.dll.config
+C:\Sketch\Sketch\bin\Sketch.dll
+C:\Sketch\Sketch\bin\Sketch.pdb
+C:\Sketch\Sketch\bin\Antlr3.Runtime.dll
+C:\Sketch\Sketch\bin\EntityFramework.dll
+C:\Sketch\Sketch\bin\EntityFramework.SqlServer.dll
+C:\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Sketch\Sketch\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Sketch\Sketch\bin\Microsoft.Owin.dll
+C:\Sketch\Sketch\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Sketch\Sketch\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Sketch\Sketch\bin\Microsoft.Owin.Security.dll
+C:\Sketch\Sketch\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Sketch\Sketch\bin\Microsoft.Owin.Security.Google.dll
+C:\Sketch\Sketch\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Sketch\Sketch\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Sketch\Sketch\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Sketch\Sketch\bin\Microsoft.Web.Infrastructure.dll
+C:\Sketch\Sketch\bin\Newtonsoft.Json.dll
+C:\Sketch\Sketch\bin\Owin.dll
+C:\Sketch\Sketch\bin\System.Net.Http.Formatting.dll
+C:\Sketch\Sketch\bin\System.Web.Helpers.dll
+C:\Sketch\Sketch\bin\System.Web.Http.dll
+C:\Sketch\Sketch\bin\System.Web.Http.WebHost.dll
+C:\Sketch\Sketch\bin\System.Web.Mvc.dll
+C:\Sketch\Sketch\bin\System.Web.Optimization.dll
+C:\Sketch\Sketch\bin\System.Web.Razor.dll
+C:\Sketch\Sketch\bin\System.Web.WebPages.Deployment.dll
+C:\Sketch\Sketch\bin\System.Web.WebPages.dll
+C:\Sketch\Sketch\bin\System.Web.WebPages.Razor.dll
+C:\Sketch\Sketch\bin\WebGrease.dll
+C:\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Sketch\Sketch\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Sketch\Sketch\bin\Microsoft.Owin.xml
+C:\Sketch\Sketch\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Sketch\Sketch\bin\Microsoft.Owin.Security.xml
+C:\Sketch\Sketch\bin\System.Web.Helpers.xml
+C:\Sketch\Sketch\bin\System.Web.Mvc.xml
+C:\Sketch\Sketch\bin\System.Web.Optimization.xml
+C:\Sketch\Sketch\bin\System.Web.Razor.xml
+C:\Sketch\Sketch\bin\System.Web.WebPages.xml
+C:\Sketch\Sketch\bin\System.Web.WebPages.Deployment.xml
+C:\Sketch\Sketch\bin\System.Web.WebPages.Razor.xml
+C:\Sketch\Sketch\bin\Newtonsoft.Json.xml
+C:\Sketch\Sketch\bin\Antlr3.Runtime.pdb
+C:\Sketch\Sketch\bin\System.Net.Http.Formatting.xml
+C:\Sketch\Sketch\bin\System.Web.Http.xml
+C:\Sketch\Sketch\bin\System.Web.Http.WebHost.xml
+C:\Sketch\Sketch\bin\EntityFramework.xml
+C:\Sketch\Sketch\bin\EntityFramework.SqlServer.xml
+C:\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Sketch\Sketch\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Sketch\Sketch\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Sketch\Sketch\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Sketch\Sketch\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Sketch\Sketch\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Sketch\Sketch\bin\Microsoft.Owin.Security.Google.xml
+C:\Sketch\Sketch\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Sketch\Sketch\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Sketch\Sketch\obj\Debug\Sketch.dll
+C:\Sketch\Sketch\obj\Debug\Sketch.pdb
+C:\Sketch\Sketch\bin\CloudinaryDotNet.dll
+C:\Sketch\Sketch\obj\Debug\Sketch.csprojResolveAssemblyReference.cache
+C:\DesignSketch\Sketch\bin\Sketch.dll.config
+C:\DesignSketch\Sketch\bin\Sketch.dll
+C:\DesignSketch\Sketch\bin\Sketch.pdb
+C:\DesignSketch\Sketch\bin\Antlr3.Runtime.dll
+C:\DesignSketch\Sketch\bin\CloudinaryDotNet.dll
+C:\DesignSketch\Sketch\bin\EntityFramework.dll
+C:\DesignSketch\Sketch\bin\EntityFramework.SqlServer.dll
+C:\DesignSketch\Sketch\bin\Microsoft.AspNet.Identity.Core.dll
+C:\DesignSketch\Sketch\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\DesignSketch\Sketch\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\DesignSketch\Sketch\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\DesignSketch\Sketch\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\DesignSketch\Sketch\bin\Microsoft.Owin.dll
+C:\DesignSketch\Sketch\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\DesignSketch\Sketch\bin\Microsoft.Owin.Security.Cookies.dll
+C:\DesignSketch\Sketch\bin\Microsoft.Owin.Security.dll
+C:\DesignSketch\Sketch\bin\Microsoft.Owin.Security.Facebook.dll
+C:\DesignSketch\Sketch\bin\Microsoft.Owin.Security.Google.dll
+C:\DesignSketch\Sketch\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\DesignSketch\Sketch\bin\Microsoft.Owin.Security.OAuth.dll
+C:\DesignSketch\Sketch\bin\Microsoft.Owin.Security.Twitter.dll
+C:\DesignSketch\Sketch\bin\Microsoft.Web.Infrastructure.dll
+C:\DesignSketch\Sketch\bin\Newtonsoft.Json.dll
+C:\DesignSketch\Sketch\bin\Owin.dll
+C:\DesignSketch\Sketch\bin\System.Net.Http.Formatting.dll
+C:\DesignSketch\Sketch\bin\System.Web.Helpers.dll
+C:\DesignSketch\Sketch\bin\System.Web.Http.dll
+C:\DesignSketch\Sketch\bin\System.Web.Http.WebHost.dll
+C:\DesignSketch\Sketch\bin\System.Web.Mvc.dll
+C:\DesignSketch\Sketch\bin\System.Web.Optimization.dll
+C:\DesignSketch\Sketch\bin\System.Web.Razor.dll
+C:\DesignSketch\Sketch\bin\System.Web.WebPages.Deployment.dll
+C:\DesignSketch\Sketch\bin\System.Web.WebPages.dll
+C:\DesignSketch\Sketch\bin\System.Web.WebPages.Razor.dll
+C:\DesignSketch\Sketch\bin\WebGrease.dll
+C:\DesignSketch\Sketch\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\DesignSketch\Sketch\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\DesignSketch\Sketch\bin\Microsoft.Owin.xml
+C:\DesignSketch\Sketch\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\DesignSketch\Sketch\bin\Microsoft.Owin.Security.xml
+C:\DesignSketch\Sketch\bin\System.Web.Helpers.xml
+C:\DesignSketch\Sketch\bin\System.Web.Mvc.xml
+C:\DesignSketch\Sketch\bin\System.Web.Optimization.xml
+C:\DesignSketch\Sketch\bin\System.Web.Razor.xml
+C:\DesignSketch\Sketch\bin\System.Web.WebPages.xml
+C:\DesignSketch\Sketch\bin\System.Web.WebPages.Deployment.xml
+C:\DesignSketch\Sketch\bin\System.Web.WebPages.Razor.xml
+C:\DesignSketch\Sketch\bin\Newtonsoft.Json.xml
+C:\DesignSketch\Sketch\bin\Antlr3.Runtime.pdb
+C:\DesignSketch\Sketch\bin\System.Net.Http.Formatting.xml
+C:\DesignSketch\Sketch\bin\System.Web.Http.xml
+C:\DesignSketch\Sketch\bin\System.Web.Http.WebHost.xml
+C:\DesignSketch\Sketch\bin\EntityFramework.xml
+C:\DesignSketch\Sketch\bin\EntityFramework.SqlServer.xml
+C:\DesignSketch\Sketch\bin\Microsoft.AspNet.Identity.Core.xml
+C:\DesignSketch\Sketch\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\DesignSketch\Sketch\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\DesignSketch\Sketch\bin\Microsoft.Owin.Security.Facebook.xml
+C:\DesignSketch\Sketch\bin\Microsoft.Owin.Security.Cookies.xml
+C:\DesignSketch\Sketch\bin\Microsoft.Owin.Security.OAuth.xml
+C:\DesignSketch\Sketch\bin\Microsoft.Owin.Security.Google.xml
+C:\DesignSketch\Sketch\bin\Microsoft.Owin.Security.Twitter.xml
+C:\DesignSketch\Sketch\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\DesignSketch\Sketch\obj\Debug\Sketch.csprojResolveAssemblyReference.cache
+C:\DesignSketch\Sketch\obj\Debug\Sketch.dll
+C:\DesignSketch\Sketch\obj\Debug\Sketch.pdb

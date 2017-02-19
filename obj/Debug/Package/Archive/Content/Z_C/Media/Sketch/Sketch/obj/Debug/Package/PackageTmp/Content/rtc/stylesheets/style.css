@@ -1,0 +1,32 @@
+  
+/* Video Box */
+
+#vid-box video{
+	width: 100%;
+	height: auto;
+    max-height: 50vh;
+    max-width: auto;
+    
+} 
+
+.video2{
+    width: 33%;
+}
+
+video{
+    width: 25%;
+    
+}
+
+@media only screen 
+and (min-width : 320px) 
+and (max-width : 800px){   
+    #vid-box video{
+        width: 100%;
+        height: auto;
+    }
+   
+}
+
+
+ 

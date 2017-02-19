@@ -1,0 +1,56 @@
+﻿
+<div class="container">
+    <div class="row top-control-menu">
+        <!-- tools-->
+        <div id="canvascontainer" style="min-height:500px" class="tool-bar col-md-9 col-xs-12">
+            <canvas id="canvas2" style=" "> This text is displayed if your browser does not support HTML5 Canvas. </canvas>
+
+
+        </div>
+        <div class="camera col-md-3 col-xs-12">
+            <div style="z-index: 100;position: absolute;right: 0;" id="divContainer">
+                <br />
+                <br />
+                <div id="divLogin" class="login">
+                    <div>
+                        Your Name:
+                        <br />
+                        <input id="txtNickName" type="text" class="textBox" />
+                    </div>
+                    <div id="divButton">
+                        <input id="btnStartChat" type="button" class="submitButton" value="Start Chat" />
+                    </div>
+                </div>
+
+                <div id="divChat" class="chatRoom" style="height:200px;">
+                    <div class="title" style="background-color:transparent;">
+                        Welcome to Chat Room [
+                        <span id='spanUser'></span>]
+
+                    </div>
+                    <div class="content">
+                        <div id="divChatWindow" class="chatWindow">
+                        </div>
+                        <div id="divusers" class="users" style="display:none;">
+                        </div>
+                    </div>
+                    <div class="messageBar">
+                        <span class="input input--minoru" style="max-width:400px">
+                            <input class="input__field input__field--yoko" type="text" id="txtMessage" />
+                            <label class="input__label input__label--yoko" for="input-16">
+                                <span class="input__label-content input__label-content--yoko">Write Text Here</span>
+                            </label>
+                        </span>
+
+                        <input id="btnSendMsg" style="display:none;" type="button" value="Send" class="submitButton" />
+                    </div>
+                </div>
+
+                <input id="hdId" type="hidden" />
+                <input id="hdUserName" type="hidden" />
+            </div>
+
+        </div>
+    </div>
+</div>
+

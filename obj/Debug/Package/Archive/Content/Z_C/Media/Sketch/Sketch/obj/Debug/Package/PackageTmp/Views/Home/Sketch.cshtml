@@ -1,0 +1,604 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,500,700' rel='stylesheet' type='text/css'>
+
+
+
+     <style type="text/css">
+        #container2 {
+            position: relative;
+        }
+
+        #canvas2 {
+            border: 1px solid #000;
+        }
+    </style>
+    <link href="~/Content/TooltipStylesInspiration/css/demo.css" rel="stylesheet" />
+    <link href="~/Content/TooltipStylesInspiration/css/normalize.css" rel="stylesheet" />
+    <link href="~/Content/TooltipStylesInspiration/css/tooltip-bloated.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Content/Recordmp3js-master/recordmp3.js"></script>
+
+    <script src="~/Scripts/jquery.signalR-2.0.3.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+  
+    <script src="~/Scripts/knockout-2.2.0.js"></script>
+     
+
+     <script type="text/javascript" style="display:none">
+
+    </script>
+
+
+ 
+</head>
+<body onload="init2()">
+    <a id="controltooltip" style="position:absolute" class="tooltip" href="#"><i class="fa fa-fw fa-car"></i><span class="tooltip-content">You can easily navigate the city by car.</span>xczxc</a>
+
+    <table>
+        <tr>
+            <td>
+
+                <div class="example" style="width:600px;" data-text="example">
+                    <div class="fluent-menu" data-role="fluentmenu" data-on-special-click="specialClick">
+                        <ul class="tabs-holder">
+                            
+                            <li class="active"><a href="#tab_home">Drawing</a></li>
+                            <li class="active"><a href="#tab_mailings">Mailing</a></li>
+                            <li><a href="#tab_folder">Folder</a></li>
+                            <li><a href="#tab_view">View</a></li>
+                        </ul>
+
+                        <div class="tabs-content">
+                            <div class="tab-panel" id="tab_home">
+                                <div class="tab-panel-group">
+                                    <div class="tab-group-content" >
+                                        <button class="fluent-big-button">
+
+                                            <img onclick="ctool('pen');"  src="~/img/pencil.png" />
+
+                                        </button>
+                                        <button onclick="ctool('rectangle');" class="fluent-big-button">
+
+                                            <img src="~/img/rectangle.png" />
+
+                                        </button>
+                                        <button class="fluent-big-button">
+
+                                            <img onclick="ctool('circle')" src="~/img/circle.png" />
+
+                                        </button>
+                                        <button class="fluent-big-button">
+
+                                            <img onclick="ctool('line')" src="~/img/line.png" />
+
+                                        </button>
+                                        <button class="fluent-big-button">
+
+                                            <img onclick="ctool('text')" src="~/img/text.png" />
+
+                                        </button>
+                                    </div>
+                                    <div class="tab-group-caption">Basic Drawing</div>
+                                </div>
+                                <div class="tab-content-segment" >
+                                    <div  id="filldiv"><input data-bind="value: StyleTools.fillcolor" type="color" id="defaultfill" /> <span style="width:150px;">Fill </span></div>
+                                     
+                                    <div data-bind="if :StyleTools.font" id="fontdiv">
+                                        <select id="defaultfont">
+                                            <option>Arial</option>
+                                            <option>Sans Serif</option>
+
+                                        </select>
+                                        <span style="width:150px;">Font </span>
+                                    </div>
+                                    <div data-bind="if :StyleTools.font" id="stylediv">
+                                        <select id="defaultfontstyle">
+                                            <option>Bold</option>
+                                            <option>Italic</option>
+
+                                        </select>
+                                        <span style="width:150px;">Font Style</span>
+                                    </div>
+                                    <div id="isfilldiv">
+                                        <input type="checkbox" data-bind="checked: StyleTools.isfill" /> 
+
+                                    </div>
+                                    </div> 
+                                </div>
+
+                             </div>
+
+                    
+                         </div>
+                    </div>
+                  <!-- End of example -->
+
+               
+              
+ 
+            </td>
+
+        </tr>
+        <tr>
+          
+            <td>
+                <div id="container21">
+                   
+                    <canvas style=" top:0px" id="canvas2" width="1000" height="1000"> This text is displayed if your browser does not support HTML5 Canvas. </canvas>
+                    <img id="canvasimg" />
+     
+                  
+
+                </div>
+
+            </td>
+        </tr>
+
+    </table>
+  
+
+ 
+    <div style="z-index: 100;position: absolute;right: 0;" id="divContainer">
+        <div style="float:right; margin-right:30px;" id="title_bar">
+            <div style="font-size:40px; color:white;cursor:pointer" id="chatminbtn">-</div>
+        </div>
+        <br />
+        <br />
+        <div id="divLogin" class="login">
+            <div>
+                Your Name:
+                <br />
+                <input id="txtNickName" type="text" class="textBox" />
+            </div>
+            <div id="divButton">
+                <input id="btnStartChat" type="button" class="submitButton" value="Start Chat" />
+            </div>
+        </div>
+
+        <div id="divChat" class="chatRoom" style="background-image:url(../../Content/chatbg.png);background-repeat:no-repeat;background-size:cover;margin:10px;height:500px;">
+            <div class="title" style="background-color:transparent;">
+                Welcome to Chat Room [<span id='spanUser'></span>]
+
+            </div>
+            <div class="content">
+                <div id="divChatWindow" class="chatWindow">
+                </div>
+                <div id="divusers" class="users">
+                </div>
+            </div>
+            <div class="messageBar">
+                <span class="input input--minoru" style="max-width:400px">
+                    <input class="input__field input__field--yoko" type="text" id="txtMessage" />
+                    <label class="input__label input__label--yoko" for="input-16">
+                        <span class="input__label-content input__label-content--yoko">Write Text Here</span>
+                    </label>
+                </span>
+
+                <input id="btnSendMsg" style="display:none;" type="button" value="Send" class="submitButton" />
+            </div>
+        </div>
+
+        <input id="hdId" type="hidden" />
+        <input id="hdUserName" type="hidden" />
+    </div>
+
+    <script src="~/Scripts/fabric.js"></script>
+    <link href="~/mui/build/css/metro.css" rel="stylesheet" />
+    <link href="~/mui/build/css/metro-schemes.css" rel="stylesheet" />
+
+    <link href="~/mui/build/css/metro-icons.css" rel="stylesheet" />
+    <link href="~/mui/build/css/metro-responsive.css" rel="stylesheet" />
+    <script src="~/mui/build/js/metro.js"></script> 
+    <script src="~/Scripts/json-patch-duplex.js"></script>
+    <script src="~/FabricBoard.js"></script>
+
+
+
+
+
+
+    <script>
+        (function () {
+            $("#chatminbtn").click(function () {
+                if ($(this).html() == "-") {
+                    $(this).html("+");
+                }
+                else {
+                    $(this).html("-");
+                }
+                $("#divChat").slideToggle();
+            });
+
+
+
+
+
+        })();
+    </script>
+    
+
+        <script>
+        (function () {
+            var docElem = window.document.documentElement, didScroll, scrollPosition;
+
+            // trick to prevent scrolling when opening/closing button
+            function noScrollFn() {
+                window.scrollTo(scrollPosition ? scrollPosition.x : 0, scrollPosition ? scrollPosition.y : 0);
+            }
+
+            function noScroll() {
+                window.removeEventListener('scroll', scrollHandler);
+                window.addEventListener('scroll', noScrollFn);
+            }
+
+            function scrollFn() {
+                window.addEventListener('scroll', scrollHandler);
+            }
+
+            function canScroll() {
+                window.removeEventListener('scroll', noScrollFn);
+                scrollFn();
+            }
+
+            function scrollHandler() {
+                if (!didScroll) {
+                    didScroll = true;
+                    setTimeout(function () { scrollPage(); }, 60);
+                }
+            };
+
+            function scrollPage() {
+                scrollPosition = { x: window.pageXOffset || docElem.scrollLeft, y: window.pageYOffset || docElem.scrollTop };
+                didScroll = false;
+            };
+
+            scrollFn();
+
+        
+        })();
+    </script>
+    <link type="text/css" rel="stylesheet" href="~/Css/ChatStyle.css" />
+    <link rel="stylesheet" href="~/Css/JQueryUI/themes/base/jquery.ui.all.css">
+
+
+
+
+
+    <!--Script references. -->
+    <!--Reference the jQuery library. -->
+
+    <script src="~/Scripts/ui/jquery.ui.core.js"></script>
+    <script src="~/Scripts/ui/jquery.ui.widget.js"></script>
+    <script src="~/Scripts/ui/jquery.ui.mouse.js"></script>
+    <script src="~/Scripts/ui/jquery.ui.draggable.js"></script>
+    <script src="~/Scripts/ui/jquery.ui.resizable.js"></script>
+    <script type="text/javascript">
+        var room = getParameterByName('room');
+        $(function () {
+
+            setScreen(true);
+
+            // Declare a proxy to reference the hub.
+            var chatHub = $.connection.chatHub;
+
+            registerClientMethods(chatHub);
+
+            // Start Hub
+            $.connection.hub.start().done(function () {
+
+                registerEvents(chatHub)
+
+            });
+
+        });
+
+        function setScreen(isLogin) {
+
+            if (!isLogin) {
+
+                $("#divChat").hide();
+                $("#divLogin").show();
+            }
+            else {
+
+                $("#divChat").show();
+                $("#divLogin").hide();
+            }
+
+        }
+
+        function registerEvents(chatHub) {
+
+            function init() {
+                try {
+                    var name = getParameterByName('userName');
+                    if (name.length > 0) {
+
+                        chatHub.server.connect(name, room);
+                    }
+                    else {
+                        // alert("Please enter name");
+                    }
+                } catch (err) { }
+
+            }
+            init();
+
+            $("#statusbtn").click(function () {
+
+                chatHub.server.endRoom(room);
+                window.location.href = "http://example.com/new_url";
+
+
+            });
+            $('#btnSendMsg').click(function () {
+
+                var msg = $("#txtMessage").val();
+                if (msg.length > 0) {
+
+                    var userName = $('#hdUserName').val();
+                    chatHub.server.sendMessageToAll(userName, msg, room);
+                    $("#txtMessage").val('');
+                }
+            });
+
+
+            $("#txtNickName").keypress(function (e) {
+                if (e.which == 13) {
+                    $("#btnStartChat").click();
+                }
+            });
+
+            $("#txtMessage").keypress(function (e) {
+                if (e.which == 13) {
+                    $('#btnSendMsg').click();
+                }
+            });
+
+
+        }
+
+        function registerClientMethods(chatHub) {
+
+            // Calls when user successfully logged in
+            chatHub.client.onConnected = function (id, userName, allUsers, messages) {
+
+                setScreen(true);
+
+                $('#hdId').val(id);
+                $('#hdUserName').val(userName);
+                $('#spanUser').html(userName);
+
+                // Add All Users
+                for (i = 0; i < allUsers.length; i++) {
+
+                    AddUser(chatHub, allUsers[i].ConnectionId, allUsers[i].UserName);
+                }
+
+                // Add Existing Messages
+                for (i = 0; i < messages.length; i++) {
+
+                    AddMessage(messages[i].UserName, messages[i].Message);
+                }
+
+
+            }
+
+            // On New User Connected
+            chatHub.client.onNewUserConnected = function (id, name) {
+
+                AddUser(chatHub, id, name);
+            }
+
+
+            // On User Disconnected
+            chatHub.client.onUserDisconnected = function (id, userName) {
+
+                $('#' + id).remove();
+
+                var ctrId = 'private_' + id;
+                $('#' + ctrId).remove();
+
+
+                var disc = $('<div class="disconnect">"' + userName + '" logged off.</div>');
+
+                $(disc).hide();
+                $('#divusers').prepend(disc);
+                $(disc).fadeIn(200).delay(2000).fadeOut(200);
+
+            }
+
+            chatHub.client.messageReceived = function (userName, message) {
+
+                AddMessage(userName, message);
+            }
+
+
+            chatHub.client.sendPrivateMessage = function (windowId, fromUserName, message) {
+
+                var ctrId = 'private_' + windowId;
+
+
+                if ($('#' + ctrId).length == 0) {
+
+                    createPrivateChatWindow(chatHub, windowId, ctrId, fromUserName);
+
+                }
+
+                $('#' + ctrId).find('#divMessage').append('<div class="message"><span class="userName">' + fromUserName + '</span>: ' + message + '</div>');
+
+                // set scrollbar
+                var height = $('#' + ctrId).find('#divMessage')[0].scrollHeight;
+                $('#' + ctrId).find('#divMessage').scrollTop(height);
+
+            }
+
+        }
+
+        function AddUser(chatHub, id, name) {
+
+            var userId = $('#hdId').val();
+
+            var code = "";
+
+            if (userId == id) {
+
+                code = $('<div class="loginUser">' + name + "</div>");
+
+            }
+            else {
+
+                code = $('<a id="' + id + '" class="user" >' + name + '<a>');
+
+                $(code).dblclick(function () {
+
+                    var id = $(this).attr('id');
+
+                    if (userId != id)
+                        OpenPrivateChatWindow(chatHub, id, name);
+
+                });
+            }
+
+            $("#divusers").append(code);
+
+        }
+
+        function AddMessage(userName, message) {
+            $('#divChatWindow').append('<div class="message"><span class="userName">' + userName + '</span>: ' + message + '</div>');
+
+            var height = $('#divChatWindow')[0].scrollHeight;
+            $('#divChatWindow').scrollTop(height);
+        }
+
+        function OpenPrivateChatWindow(chatHub, id, userName) {
+
+            var ctrId = 'private_' + id;
+
+            if ($('#' + ctrId).length > 0) return;
+
+            createPrivateChatWindow(chatHub, id, ctrId, userName);
+
+        }
+
+        function createPrivateChatWindow(chatHub, userId, ctrId, userName) {
+
+            var div = '<div id="' + ctrId + '" class="ui-widget-content draggable" rel="0">' +
+                       '<div class="header">' +
+                          '<div  style="float:right;">' +
+                              '<img id="imgDelete"  style="cursor:pointer;" src="/Images/delete.png"/>' +
+                           '</div>' +
+
+                           '<span class="selText" rel="0">' + userName + '</span>' +
+                       '</div>' +
+                       '<div id="divMessage" class="messageArea">' +
+
+                       '</div>' +
+                       '<div class="buttonBar">' +
+                          '<input id="txtPrivateMessage" class="msgText" type="text"   />' +
+                          '<input id="btnSendMessage" class="submitButton button" type="button" value="Send"   />' +
+                       '</div>' +
+                    '</div>';
+
+            var $div = $(div);
+
+            // DELETE BUTTON IMAGE
+            $div.find('#imgDelete').click(function () {
+                $('#' + ctrId).remove();
+            });
+
+            // Send Button event
+            $div.find("#btnSendMessage").click(function () {
+
+                $textBox = $div.find("#txtPrivateMessage");
+                var msg = $textBox.val();
+                if (msg.length > 0) {
+
+                    chatHub.server.sendPrivateMessage(userId, msg, room);
+                    $textBox.val('');
+                }
+            });
+
+            // Text Box event
+            $div.find("#txtPrivateMessage").keypress(function (e) {
+                if (e.which == 13) {
+                    $div.find("#btnSendMessage").click();
+                }
+            });
+
+            AddDivToContainer($div);
+
+        }
+
+        function AddDivToContainer($div) {
+            $('#divContainer').prepend($div);
+
+            $div.draggable({
+
+                handle: ".header",
+                stop: function () {
+
+                }
+            });
+
+            ////$div.resizable({
+            ////    stop: function () {
+
+            ////    }
+            ////});
+
+        }
+
+    </script>
+
+
+    <script>
+        (function () {
+            // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+            if (!String.prototype.trim) {
+                (function () {
+                    // Make sure we trim BOM and NBSP
+                    var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+                    String.prototype.trim = function () {
+                        return this.replace(rtrim, '');
+                    };
+                })();
+            }
+
+            [].slice.call(document.querySelectorAll('input.input__field')).forEach(function (inputEl) {
+                // in case the input is already filled..
+                if (inputEl.value.trim() !== '') {
+                    classie.add(inputEl.parentNode, 'input--filled');
+                }
+
+                // events:
+                inputEl.addEventListener('focus', onInputFocus);
+                inputEl.addEventListener('blur', onInputBlur);
+            });
+
+            function onInputFocus(ev) {
+                classie.add(ev.target.parentNode, 'input--filled');
+            }
+
+            function onInputBlur(ev) {
+                if (ev.target.value.trim() === '') {
+                    classie.remove(ev.target.parentNode, 'input--filled');
+                }
+            }
+        })();
+    </script>
+
+
+
+</body>
+</html>

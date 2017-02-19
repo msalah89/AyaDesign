@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Sketch.Board>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style type='text/css'>
+    /*設定 數字靠右*/
+    td:nth-child(1){text-align: right;}
+    td:nth-child(2){text-align: right;}
+</style>
+<h2>Index</h2>
+<h4>Board</h4>
+<p>
+    @Html.ActionLink("Create New", "BoardCreate")
+</p>
+<table class="table">
+    <tr>
+        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.Duration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.startdate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BoardFile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AudioFile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Finished)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AspNetUser.UserName)
+        </th>
+
+        <th>
+           Board Link
+          </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "BoardEdit", new { id=item.Id })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Duration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.startdate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BoardFile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AudioFile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Finished)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AspNetUser.UserName)
+        </td>
+        <td>
+            @Html.ActionLink("Start", "Board", "Home", new  { room =item.Id },null)
+
+
+        </td>
+
+    </tr>
+}
+
+</table>

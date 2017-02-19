@@ -1,0 +1,55 @@
+﻿<link href="~/Content/ModalPopup.css" rel="stylesheet" />
+ 
+<link href="~/Content/image-picker/image-picker.css" rel="stylesheet" />
+<script src="~/Content/image-picker/image-picker.min.js"></script>
+
+<div id="openModal" class="modalDialog">
+    <div>
+        <a href="#close" title="Close" class="close">X</a>
+
+        <h3>MultiConverter ConvertApi.com example, show how to retriew API data and convert files using client side JavaScripts</h3>
+        <form id="form" method="post" enctype="multipart/form-data" target="iframe">
+
+            <div id="step1">
+                Step1: select source file:
+                <br />
+                <input type="file" id="file" class="docfile" name="File" size="0" />
+            </div>
+
+            <br />
+
+            <div id="step2" style="display: none;">
+                Step2: select destination format:
+                <br />
+                <select id="outputFormat" name='OutputFormat'></select>
+                <br /> Step3: enter api key:
+                <br />
+                <input id="apiKey" name="ApiKey" type="hidden" value="" />
+                <input id="ImageResolutionH" name="ImageResolutionH" type="hidden" value="150" />
+                <input id="ImageResolutionV" name="ImageResolutionV" type="hidden" value="150" />
+                <input id="JpgQuality" name="JpgQuality" type="hidden" value="60" />
+ 
+               
+                <input type="submit" id="submit" value="Convert" />
+            </div>
+
+            <br />
+
+            <div id="step3" style="display: none;">
+
+            </div>
+
+            <input type="hidden" name="StoreFile" value="true" />
+        </form>
+        <select style="display:none" multiple="multiple" id="slidepicker" class="image-picker show-html">
+            
+</select>
+        <a id="addslides" href="#" style="display:none"> Add Slides</a>
+            <div id="load_api" style="display: none;">
+                Load availiable file formats from <i><b><span></span></b></i>
+            </div>
+
+
+</div>
+    </div>
+  

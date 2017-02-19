@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type="text/javascript" src="../../Scripts/jquery-1.8.2.js"></script>
+
+</head>
+
+<body style="width:100%">
+
+    <!-- really dirty! this is just a test drive ;) -->
+
+    <script type="text/javascript" src="../build/pdf.js"></script>
+
+    <script type="text/javascript">
+        function sort_li(a, b) {
+            return Number(($(b).attr('slide'))) < Number(($(a).attr('slide'))) ? 1 : -1;
+        }
+        var currentwidth = $(window).width();
+        var pdffile = null;
+        var pdfscale = 1;
+        var windowwidth = $(window).width();
+
+        var _canvasContainer = document.getElementById('holder');
+        var _url = '';
+        var scrollValue = 0;
+        var scrollenabled = true;
+        var currentRender = 0;
+
+        function renderPage(page) {
+            var viewport = page.getViewport(pdfscale);
+
+            var vp = $(window).width() / viewport.width;
+            vp = 2;
+            console.log(vp);
+            viewport = page.getViewport(vp);
+            var canvas = {};
+            if ($('canvas[slide=' + page.pageIndex + ']').length > 0) {
+
+                canvas = $('canvas[slide=' + page.pageIndex + ']')[0];
+
+            } else {
+                var canvas = document.createElement('canvas');
+            }
+
+
+            canvas.setAttribute('slide', page.pageIndex);
+            var ctx = canvas.getContext('2d');
+            var renderContext = {
+                canvasContext: ctx,
+                viewport: viewport
+            };
+
+         canvas.height = viewport.height;
+            canvas.width = $(window).width();
+
+            _canvasContainer.appendChild(canvas);
+
+            page.render(renderContext).then(function() {
+                currentRender++;
+                if (currentRender == pdffile.numPages) {
+                    //ss  $("canvas").sort(sort_li).appendTo('#holder');
+                    $('*').width($(window).width() - 9);
+                    timeout = false;
+                    parent.boardctx.setCanvasHeight($(document).height());
+
+                    //    alert('finished');
+                }
+            });
+        }
+
+        function renderPages(pdfDoc) {
+            currentRender = 0;
+            for (var num = 1; num <= pdfDoc.numPages; num++) {
+
+                pdfDoc.getPage(num).then(renderPage);
+            }
+        }
+
+
+
+        function renderPDF() {
+            scrollEnabled = false
+                //  PDFJS.disableWorker = true;
+            if (pdffile == null) {
+                PDFJS.getDocument(_url).then(function(pdf) {
+                    pdffile = pdf;
+                    renderPages(pdf);
+
+                    $(document).scrollTop(scrollValue);
+                });
+
+            } else {
+
+                renderPages(pdffile);
+
+                $(document).scrollTop(scrollValue);
+
+            }
+
+        }
+        $(document).scroll(function() {
+            if (scrollEnabled)
+                scrollValue = $(document).scrollTop();
+
+        });
+
+        var rtime;
+        var timeout = false;
+        var delta = 300;
+
+        $(window).resize(function() {
+
+            rtime = new Date();
+            if (timeout === false) {
+                timeout = true;
+                setTimeout(resizeend, delta);
+            }
+
+
+
+
+
+
+        });
+
+        function resizeend() {
+            if (new Date() - rtime < delta) {
+                setTimeout(resizeend, delta);
+            } else {
+
+             //   renderPDF();
+
+            }
+        }
+    </script>
+
+    <div id="holder"></div>
+
+    <script type="text/javascript">
+        _url = 'compressed.tracemonkey-pldi-09.pdf';
+        _canvasContainer = document.getElementById('holder');
+        renderPDF();
+    </script>
+
+</body>
+
+</html>

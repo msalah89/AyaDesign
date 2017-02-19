@@ -1,0 +1,147 @@
+﻿@{
+    Layout = null;
+    
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <script src="~/Scripts/jquery-1.10.2.js"></script> 
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link async="async" href='http://fonts.googleapis.com/css?family=Raleway:400,300,500,700' rel='stylesheet' type='text/css'>
+    
+   
+    <!--side menu-->
+
+     
+  @Styles.Render("~/boardstyle/css")  
+    <link href="~/Content/assets/css/mystyle.css" rel="stylesheet" />
+    <script src="~/content/assets/Blueprint-SlidePushMenus-master/js/modernizr.custom.js" type="text/javascript"></script>
+    <script src="~/content/assets/Blueprint-SlidePushMenus-master/js/classie.js" type="text/javascript"></script>
+
+    <script src="~/content/assets/js/myjs.js" type="text/javascript"></script>
+  
+  
+    @Scripts.Render("~/bundles/boardbundle")
+    <script src="~/Scripts/jquery.signalR-2.0.3.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+
+  
+
+
+   
+    
+
+</head>
+<body onresize="" class="cbp-spmenu-push" onload="init2()">
+    @Html.Partial("ChakifiSlides");
+    @Html.Partial("ToolBox");
+
+    <div class="divider">
+        <div class="line">
+        </div>
+        <div class="iconImg">
+            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+        </div>
+        <div class="line">
+        </div>
+    </div>
+    <!-- end Nav tabs -->
+    @Html.Partial("Container");
+@Html.Partial("FileConverter");
+    @Scripts.Render("~/bundles/board")
+   
+    <script src="https://cdn.pubnub.com/pubnub.min.js"></script>
+
+    <script src="~/Content/rtc/js/webrtc.js"></script>
+
+    <script src="~/Content/rtc/js/rtc-controller.js"></script>
+    <script src="~/Content/rtc/js/videortc.js"></script>
+   
+
+    <script>
+        var room = getParameterByName('room');
+    </script>
+
+
+    <script>
+        (function () {
+            var docElem = window.document.documentElement, didScroll, scrollPosition;
+
+            // trick to prevent scrolling when opening/closing button
+            function noScrollFn() {
+                window.scrollTo(scrollPosition ? scrollPosition.x : 0, scrollPosition ? scrollPosition.y : 0);
+            }
+
+            function noScroll() {
+                window.removeEventListener('scroll', scrollHandler);
+                window.addEventListener('scroll', noScrollFn);
+            }
+
+            function scrollFn() {
+                window.addEventListener('scroll', scrollHandler);
+            }
+
+            function canScroll() {
+                window.removeEventListener('scroll', noScrollFn);
+                scrollFn();
+            }
+
+            function scrollHandler() {
+                if (!didScroll) {
+                    didScroll = true;
+                    setTimeout(function () { scrollPage(); }, 60);
+                }
+            };
+
+            function scrollPage() {
+                scrollPosition = { x: window.pageXOffset || docElem.scrollLeft, y: window.pageYOffset || docElem.scrollTop };
+                didScroll = false;
+            };
+
+            scrollFn();
+
+
+        })();
+    </script>
+    
+
+
+
+
+    <!--Script references. -->
+    <!--Reference the jQuery library. -->
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <button id="start" onclick="startRecording(this);">record</button>
+    <button id="stop" onclick="stopRecording(this);" disabled>stop</button>
+
+
+
+    <script src="~/Content/Recordmp3js-master/recordmp3.js"></script>
+
+    <script src="~/Scripts/AudioRecording.js"></script>
+
+</body>
+
+</html>

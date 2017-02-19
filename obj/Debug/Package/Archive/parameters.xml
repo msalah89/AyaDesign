@@ -1,0 +1,15 @@
+﻿<parameters>
+  <parameter name="IIS Web Application Name" defaultValue="Default Web Site/" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^Z:\\Media\\Sketch\\Sketch\\obj\\Debug\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^Z:\\Media\\Sketch\\Sketch\\obj\\Debug\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=chalkifi2.ci9eecw7pbrw.us-east-1.rds.amazonaws.com,1433;Initial Catalog=Chalkifi;User ID=msalah89;Password=casper89" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="Z:\\Media\\Sketch\\Sketch\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="ChalkifiEntities-Web.config Connection String" description="ChalkifiEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Chalkifi.csdl|res://*/Chalkifi.ssdl|res://*/Chalkifi.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=chalkifi2.ci9eecw7pbrw.us-east-1.rds.amazonaws.com,1433;Initial Catalog=Chalkifi;User ID=msalah89;Password=casper89;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="Z:\\Media\\Sketch\\Sketch\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ChalkifiEntities']/@connectionString" />
+  </parameter>
+  <parameter name="ChalkifiEntities1-Web.config Connection String" description="ChalkifiEntities1 Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Chalkifi.csdl|res://*/Chalkifi.ssdl|res://*/Chalkifi.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=chalkifi2.ci9eecw7pbrw.us-east-1.rds.amazonaws.com,1433;Initial Catalog=Chalkifi;User ID=msalah89;Password=casper89;application name=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="Z:\\Media\\Sketch\\Sketch\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ChalkifiEntities1']/@connectionString" />
+  </parameter>
+</parameters>

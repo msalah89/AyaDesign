@@ -1,0 +1,100 @@
+﻿<link href="~/Content/ModalPopup.css" rel="stylesheet" />
+ 
+<link href="~/Content/image-picker/image-picker.css" rel="stylesheet" />
+<script src="~/Content/image-picker/image-picker.min.js"></script>
+
+<div id="openModalPDF" class="modalDialog">
+    <div>
+        <a href="#close" title="Close" class="close">X</a>
+
+        <h3>MultiConverter ConvertApi.com example, show how to retriew API data and convert files using client side JavaScripts</h3>
+        <form id="form" method="post" enctype="multipart/form-data" target="iframe">
+
+            <div id="step1">
+                Step1: select source file:
+                <br />
+                <input type="file" id="file" class="docfile" name="File" size="0" />
+            </div>
+
+            <br />
+
+            <div id="step2" style="display: none;">
+                Step2: select destination format:
+                <br />
+                <select id="outputFormat" name='OutputFormat'></select>
+                <br /> Step3: enter api key:
+                <br />
+                <input id="apiKey" name="ApiKey" type="hidden" value="" />
+                <input id="ImageResolutionH" name="ImageResolutionH" type="hidden" value="150" />
+                <input id="ImageResolutionV" name="ImageResolutionV" type="hidden" value="150" />
+                <input id="JpgQuality" name="JpgQuality" type="hidden" value="60" />
+ 
+               
+                <input type="submit" id="submit" value="Convert" />
+            </div>
+
+            <br />
+
+            <div id="step3" style="display: none;">
+
+            </div>
+
+            <input type="hidden" name="StoreFile" value="true" />
+        </form>
+        <select style="display:none" multiple="multiple" id="slidepicker" class="image-picker show-html">
+            
+</select>
+        <a id="addslides" href="#" style="display:none"> Add Slides</a>
+            <div id="load_api" style="display: none;">
+                Load availiable file formats from <i><b><span></span></b></i>
+            </div>
+
+
+<div>
+
+or Media <img id="mediaIcon" height="16" width="16" src='http://www.google.com/s2/favicons?domain=www.unkown.com' />
+<input style="color:black;" type="text" id="mediaUrl" />
+ 
+    
+   <a id="addmediaUrl" href="#openModalPDF" > Add Media</a>
+     
+</div>
+</div>
+
+
+
+    </div>
+    <script type="text/javascript">
+String.prototype.endsWith = function(suffix) {
+    return this.match(suffix+"$") == suffix;
+};
+
+   // $("#slidepicker").imagepicker();
+$('#addmediaUrl').click(function(){
+
+var url = $('#mediaUrl').val();
+var re = /^(http[s]?:\/\/){0,1}(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/;
+if (!re.test(url)) { 
+    alert("url error");
+    return false;
+}
+if (url.endsWith('.pdf')){
+
+ 
+boardctx.addslide('pdf',url);
+
+}
+
+
+});
+$('#mediaUrl').change(function(){
+    setTimeout(function(){ 
+
+$('#mediaIcon').attr("src","http://www.google.com/s2/favicons?domain="+$('#mediaUrl').val());
+
+
+     }, 500);
+
+
+});
+</script>

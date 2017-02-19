@@ -1,0 +1,1316 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,500,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="~/content/SelectInspiration/css/cs-select.css" />
+    <link rel="stylesheet" type="text/css" href="~/content/SelectInspiration/css/cs-skin-circular.css" />
+    <link rel="stylesheet" type="text/css" href="~/content/SelectInspiration/css/cs-skin-boxes.css" />
+
+    <link rel="stylesheet" type="text/css" href="~/content/SelectInspiration/css/cs-skin-overlay.css" />
+    <link rel="stylesheet" type="text/css" href="~/content/ButtonComponentMorph/css/component.css" />
+    <style type="text/css">
+        #container2 {
+            position: relative;
+        }
+
+        #canvas2 {
+            border: 1px solid #000;
+        }
+    </style>
+    <link href="~/Content/TextInputEffects/css/component.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.signalR-2.0.3.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+    <link href="~/Content/image-picker/image-picker.css" rel="stylesheet" />
+    <script src="~/Content/image-picker/image-picker.js"></script>
+
+    <script src="~/content/SelectInspiration/js/classie.js"></script>
+    <script src="~/content/SelectInspiration/js/selectFx.js"></script>
+
+    <script type="text/javascript" style="display:none">
+
+
+
+        var fillcolor = "white";
+
+        //document.querySelector('span.cs-placeholder').style.backgroundImage = 'url(../content/SelectInspiration/img/select'.png)';
+        var currentText = '';
+        var _currentImage = '';
+        function ctool(tool) {
+            currenttool = tool;
+        }
+        var currenttool = 'select';
+
+        var prevTool = 'select';
+        function selectShape() {
+            prevTool = currenttool;
+            currenttool = "select";
+            var img = document.createElement('img');
+            img.src = '../content/SelectInspiration/img/select.png';
+            img.onload = function () {
+
+                document.querySelector('span.cs-placeholder').style.backgroundImage = 'url(../content/SelectInspiration/img/select.png)';
+
+            };
+
+            $("#input16").hide();
+
+            // $(".input__field").val('');
+        }
+        function selectPrevShape() {
+
+            currenttool = prevTool;
+            var img = document.createElement('img');
+            img.src = '../content/SelectInspiration/img/' + prevTool + '.png';
+            img.onload = function () {
+
+                document.querySelector('span.cs-placeholder').style.backgroundImage = 'url(../content/SelectInspiration/img/' + prevTool + '.png)';
+
+            };
+            if (currentText == 'text')
+                $(".input--minoru").show();
+
+            // $(".input__field").val('');
+        }
+
+
+        selectShape();
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+
+        (function (window) {
+            
+                var crayonBackgroundImage = new Image();
+
+                 crayonBackgroundImage.src = "../images/crayon-background.png";
+                var currentId = 0;
+                var currentList = [];
+                var boxes2 = [];
+                var selectionHandles = [];
+                var currentImage = new Image();
+                 currentImage.src = "";
+                 var canvas;
+                 var ctx;
+                 var WIDTH;
+                 var HEIGHT;
+                 var INTERVAL = 2;
+                 var isDrag = false;
+                 var isResizeDrag = false;
+                 var expectResize = -1;
+                 var mx, my;
+                 var canvasValid = false;
+                 var shadowSel = null;
+                 var mySel = null;
+                 var mySelColor = '#CC0000';
+                 var mySelWidth = 3;
+                 var mySelBoxColor = 'darkred';
+                 var mySelBoxSize = 7;
+                 var ghostcanvas;
+                 var currentbox = null;
+                 var gctx;
+                 var signal;
+                 var offsetx, offsety;
+                 var currentpaths = [];
+                 var stylePaddingLeft, stylePaddingTop, styleBorderLeft, styleBorderTop;
+            
+            function Box2() {
+                this.x = 0; this.y = 0; this.w = 4; this.h = 1; this.fill = '#fff';
+                this.index = -1;
+                this.tool = currenttool;
+                this.stroke = fillcolor;
+                var deleted = false;
+                var canresize = true;
+                var index = 0;
+                var paths = [];
+                if (this.index = -1) {
+                    var _id = currentId++;
+                    currentList.push(_id);
+                }
+            }
+            
+            Box2.prototype = {
+                draw: function (context, optionalColor) {
+                    if (this.x + this.w == 3)
+                        return;
+
+                    if (context ===  gctx)
+                    { context.fillStyle = 'black'; }
+                    else { context.fillStyle = this.fill; }
+                    if (this.x > WIDTH || this.y > HEIGHT)
+                        return;
+                    if (this.x + this.w < 0 || this.y + this.h < 0) return;
+                    context.beginPath();
+
+                    if (this.tool == 'rectangle') {
+                        context.fillRect(this.x, this.y, this.w, this.h);
+                    }
+                    else if (this.tool == "circle") {
+                        context.arc(this.x + (this.w / 2), this.y + (this.w / 2), this.w / 2, 0, 2 * Math.PI, true);
+                        this.h = this.w;
+                    }
+                    else if (this.tool == "image") {
+                        try {
+                            var newImage = new Image();
+                            newImage.crossOrigin = 'anonymous';
+                            if (this.fill == 'white')
+                                this.fill = _currentImage;
+
+                            newImage.src = this.fill;
+                            context.drawImage(newImage, this.x, this.y, this.w, this.h);
+
+                        } catch (ex) {
+
+
+                        }
+
+                    }
+                    else if (this.tool == "text") {
+
+                        context.lineStyle = "#ffff00";
+                        if (this.stroke == 'white')
+                            this.stroke = $('#input-16').val();
+                        $('.input__field').val('');
+                        context.font = "35px Georgia ";
+                        if (this.w < 200) this.w = 200;
+                        context.fillText(this.stroke, this.x + 20, this.y + 30, this.w, 100);
+
+
+
+
+                    }
+                    else if (this.tool == "pen") {
+                      //  context.fillRect(this.x, this.y, this.w, this.h);
+
+                        DrawPen(this.paths, this.x, this.y, this.stroke);
+
+                    }
+                    context.lineWidth = 4;
+
+                    context.lineTo(this.x, this.y);
+                    context.fill();
+                    if (shadowSel === this && currenttool == "select") {
+                        if (shadowSel == mySel) {
+                            shadowSel = null;
+                        }
+                        context.strokeStyle = "#eee";
+                        context.lineWidth = mySelWidth;
+                        context.strokeRect(this.x, this.y, this.w, this.h);
+                        var half = mySelBoxSize / 2;
+                        selectionHandles[0].x = this.x - half;
+                        selectionHandles[0].y = this.y - half;
+                        selectionHandles[1].x = this.x + this.w / 2 - half;
+                        selectionHandles[1].y = this.y - half;
+                        selectionHandles[2].x = this.x + this.w - half;
+                        selectionHandles[2].y = this.y - half;
+                        selectionHandles[3].x = this.x - half;
+                        selectionHandles[3].y = this.y + this.h / 2 - half;
+                        selectionHandles[4].x = this.x + this.w - half;
+                        selectionHandles[4].y = this.y + this.h / 2 - half;
+                        selectionHandles[6].x = this.x + this.w / 2 - half;
+
+                        selectionHandles[6].y = this.y + this.h - half;
+                        selectionHandles[5].x = this.x - half;
+                        selectionHandles[5].y = this.y + this.h - half;
+                        selectionHandles[7].x = this.x + this.w - half;
+                        selectionHandles[7].y = this.y + this.h - half;
+                        context.fillStyle = "orange";
+
+                        for (var i = 0; i < 8; i++) {
+                            var cur = selectionHandles[i];
+                            context.fillRect(cur.x, cur.y, mySelBoxSize, mySelBoxSize);
+                        }
+                    }
+                    if (mySel === this && currenttool == "select") {
+
+                        context.strokeStyle = "darkgreen";
+                        context.lineWidth = mySelWidth;
+                        context.strokeRect(this.x, this.y, this.w, this.h);
+                        var half = mySelBoxSize / 2;
+                        selectionHandles[0].x = this.x - half;
+                        selectionHandles[0].y = this.y - half;
+                        selectionHandles[1].x = this.x + this.w / 2 - half;
+                        selectionHandles[1].y = this.y - half;
+                        selectionHandles[2].x = this.x + this.w - half;
+                        selectionHandles[2].y = this.y - half;
+                        selectionHandles[3].x = this.x - half;
+                        selectionHandles[3].y = this.y + this.h / 2 - half;
+                        selectionHandles[4].x = this.x + this.w - half;
+                        selectionHandles[4].y = this.y + this.h / 2 - half;
+                        selectionHandles[6].x = this.x + this.w / 2 - half;
+
+                        selectionHandles[6].y = this.y + this.h - half;
+                        selectionHandles[5].x = this.x - half;
+                        selectionHandles[5].y = this.y + this.h - half;
+                        selectionHandles[7].x = this.x + this.w - half;
+                        selectionHandles[7].y = this.y + this.h - half;
+                        context.fillStyle = "darkorange";
+                        for (var i = 0; i < 8; i++) {
+                            var cur = selectionHandles[i];
+                            context.fillRect(cur.x, cur.y, mySelBoxSize, mySelBoxSize);
+                        }
+                    }
+                }
+            }
+            function addRect(x, y, w, h, fill, stroke, tool, path, resize, outside) {
+
+                var rect = new Box2;
+                rect.canresize = resize;
+                rect.x = x;
+                rect.y = y;
+                rect.w = w
+                rect.h = h;
+                rect.stroke = stroke;
+                rect.fill = fill;
+                rect.deleted = false;
+                rect.tool = tool;
+                rect.paths = path;
+                rect.index = boxes2.length;
+                boxes2.push(rect);
+                if (outside == false)
+                    signal.server.send(rect, '@ViewBag.Room');
+
+                invalidate();
+            }
+
+
+
+            $(document).ready(function () {
+                var chat = $.connection.boardHub;
+                signal = chat;
+                chat.client.broadcastMessage = function (message, room) {
+                    //                      alert(message);
+                    if (room == '@ViewBag.Room') {
+                        var rect = message;
+                        boxes2 = [];
+                        mainDraw();
+                        //if (currentList.indexOf(rect.index)==-1) {
+                        for (var i = 0 ; i < rect.length; i++) {
+
+                            // boxes2.push(rect);
+                            if (!rect[i].deleted)
+                                var newrect = addRect(rect[i].x, rect[i].y, rect[i].w, rect[i].h, rect[i].fill, rect[i].stroke, rect[i].tool, rect[i].paths, rect[i].canresize, true);
+                        }
+                        //  mainDraw();
+                        //} else {
+                        //    boxes2[rect.index].x = rect.x;
+                        //    boxes2[rect.index].y = rect.y;
+                        //    boxes2[rect.index].w = rect.w;
+                        //    boxes2[rect.index].h = rect.h;
+                        //    //  alert(rect.x);
+                        //}
+
+
+                        //       $('#server').append(message);
+                        invalidate();
+                    }
+                }
+
+                $.connection.hub.start().done(function () {
+
+                    //       chat.server.send("mohammed");
+                });
+            });
+            function init2() {
+
+                selectShape();
+
+                canvas = document.getElementById('canvas2');
+                canvas.height = $(document).height();
+                canvas.width = $(document).width();
+                HEIGHT = canvas.height;
+                WIDTH = canvas.width;
+                ctx = canvas.getContext('2d');
+                ghostcanvas = document.createElement('canvas');
+                ghostcanvas.height = HEIGHT;
+                ghostcanvas.width = WIDTH;
+                gctx = ghostcanvas.getContext('2d');
+                canvas.onselectstart = function () { return false; }//
+
+                if (document.defaultView && document.defaultView.getComputedStyle) {
+                    stylePaddingLeft = parseInt(document.defaultView.getComputedStyle(canvas, null)['paddingLeft'], 10) || 0;
+                    stylePaddingTop = parseInt(document.defaultView.getComputedStyle(canvas, null)['paddingTop'], 10) || 0;
+                    styleBorderLeft = parseInt(document.defaultView.getComputedStyle(canvas, null)['borderLeftWidth'], 10) || 0;
+                    styleBorderTop = parseInt(document.defaultView.getComputedStyle(canvas, null)['borderTopWidth'], 10) || 0;
+                }
+                setInterval(mainDraw, INTERVAL);
+                canvas.onmousedown = myDown;
+
+                canvas.onmouseup = myUp;
+                canvas.ondblclick = myDblClick;
+                canvas.onmousemove = myMove;
+
+                for (var i = 0; i < 8; i++) {
+                    var rect = new Box2;
+                    selectionHandles.push(rect);
+
+                }
+
+            }
+            function clear(c) {
+                c.clearRect(0, 0, WIDTH, HEIGHT);
+
+            }
+            function mainDraw() {
+
+                if (canvasValid == false) {
+                    clear(ctx);
+
+                    var l = boxes2.length;
+                    for (var i = 0; i < l; i++) {
+                        if (!boxes2[i].deleted) {
+                            boxes2[i].draw(ctx);
+                        }
+                    }//
+                    canvasValid = true;
+
+                }
+            }
+            function DrawImmage(imagesrc) {
+                var imageObj = new Image();
+                imageObj.crossOrigin = 'anonymous';
+                imageObj.onload = function () {
+                    ctx.drawImage(imageObj, 0, 0);
+                };
+                imageObj.src = imagesrc;
+            }
+            function DrawPen(path, x, y, color) {
+                //
+                if (path != undefined)
+                    if (path.length < 1)
+                        return;
+                ctx.strokeStyle = color;
+
+
+                ctx.lineCap = 'round';
+                //    ctx.lineJoin = 'round';
+                ctx.lineWidth = 6;
+                ctx.beginPath();
+                ctx.moveTo(path[1].x + x, path[1].y + y);
+                // alert(currentpaths.length);
+                for (var j = 1; j < path.length; ++j) {
+
+                    ctx.lineTo(path[j].x + x, path[j].y + y);
+                }
+
+                ctx.stroke();
+
+            }
+
+            function updatebox(box) {
+                try {
+                    signal.server.send(box, '@ViewBag.Room');
+                }
+                catch (err) {
+                    alert(err);
+
+                }
+            }
+            function myMove(e) {
+                if (!isDrag && currenttool == "select" && mySel == null) {
+                    getMouse(e);
+
+                    if (expectResize !== -1) {
+                        isResizeDrag = true;
+                        return;
+                    }
+                    clear(gctx);
+                    var l = boxes2.length;
+                    var found = false;
+
+                    for (var i = l - 1; i >= 0; i--) {
+                        shadowSel = null;
+                        boxes2[i].draw(gctx, 'black');
+                        var imageData = gctx.getImageData(mx, my, 1, 1);
+                        var index = (mx + my * imageData.width) * 4;
+                        if (imageData.data[3] > 0) {
+
+                            shadowSel = boxes2[i];
+                            found = true;
+                            if (currenttool == "delete") {
+                                boxes2[i].deleted = true;
+                            }
+                            currentbox = i;
+                            offsetx = mx - shadowSel.x;
+                            offsety = my - shadowSel.y;
+                            shadowSel.x = mx - offsetx;
+                            shadowSel.y = my - offsety;
+                            isDrag = false;
+                            invalidate();
+                            clear(gctx);
+                            return;
+
+                        }
+                    }
+
+                }
+                if (isDrag) {
+                    getMouse(e);
+                    if (mySel != null) {
+                        mySel.x = mx - offsetx; mySel.y = my - offsety; invalidate();
+                    }
+                    if (currenttool == "pen" && isDrag) {
+                        pos = getMouse(e);
+                        currentpaths.push(pos); // Append point tu current path.
+                        DrawPen(currentpaths, 0, 0);
+                    }
+                } else if (isResizeDrag) {
+                    var oldx = mySel.x; var oldy = mySel.y;
+                    switch (expectResize) {
+                        case 0: mySel.x = mx;
+                            mySel.y = my;
+                            mySel.w += oldx - mx;
+                            mySel.h += oldy - my;
+                            break; case 1: mySel.y = my;
+                                mySel.h += oldy - my; break;
+                        case 2: mySel.y = my;
+                            mySel.w = mx - oldx;
+                            mySel.h += oldy - my;
+                            break; case 3: mySel.x = mx;
+                                mySel.w += oldx - mx; break
+                                ; case 4: mySel.w = mx - oldx;
+                                    break;
+                        case 5: mySel.x = mx;
+                            mySel.w += oldx - mx;
+                            mySel.h = my - oldy;
+                            break; case 6:
+                                mySel.h = my - oldy;
+                                break; case 7: mySel.w = mx - oldx; mySel.h = my - oldy; break;
+                    }
+                    invalidate();
+                }
+                getMouse(e);
+
+                if (mySel !== null && !isResizeDrag) {
+                    if (boxes2[currentbox] != undefined) {
+                        if (boxes2[currentbox].canresize) {
+                            for (var i = 0; i < 8; i++) {
+                                var cur = selectionHandles[i];
+                                if (mx >= cur.x && mx <= cur.x + mySelBoxSize && my >= cur.y && my <= cur.y + mySelBoxSize) {
+                                    expectResize = i; invalidate();
+                                    switch (i) {
+                                        case 0: this.style.cursor = 'nw-resize';
+                                            break; case 1: this.style.cursor = 'n-resize'; break;
+                                        case 2: this.style.cursor = 'ne-resize'; break;
+                                        case 3: this.style.cursor = 'w-resize'; break;
+                                        case 4: this.style.cursor = 'e-resize'; break;
+                                        case 5: this.style.cursor = 'sw-resize'; break;
+                                        case 6: this.style.cursor = 's-resize'; break;
+                                        case 7: this.style.cursor = 'se-resize'; break;
+                                    }
+                                    return;
+
+                                }
+                            }
+                        }
+                    }
+                    isResizeDrag = false;
+                    expectResize = -1;
+                    this.style.cursor = 'auto';
+                }
+
+            }
+            function myDown(e) {
+                var param = getParameterByName('main');
+
+                if (param == 'true') {
+                    if (currenttool == "pen") {
+                        var pos = getMouse(e);
+
+                        isDrag = true;
+                        currentpaths.push([pos]);
+
+
+
+                    }
+                    else if (currenttool == "select" || currenttool == "delete") {
+                        getMouse(e);
+                        if (expectResize !== -1) {
+                            isResizeDrag = true;
+                            return;
+                        }
+                        clear(gctx);
+                        var l = boxes2.length;
+                        for (var i = l - 1; i >= 0; i--) {
+                            boxes2[i].draw(gctx, 'black');
+                            var imageData = gctx.getImageData(mx, my, 1, 1);
+                            var index = (mx + my * imageData.width) * 4; if (imageData.data[3] > 0) {
+
+                                mySel = boxes2[i];
+                                //$("#statusbtn").val( mySel.index);
+                                if (currenttool == "delete") {
+                                    //   boxes2[i]= null;
+                                    boxes2[i].deleted = true;
+                                }
+                                currentbox = i;
+                                offsetx = mx - mySel.x;
+                                offsety = my - mySel.y;
+                                mySel.x = mx - offsetx;
+                                mySel.y = my - offsety;
+                                isDrag = true;
+                                invalidate();
+                                clear(gctx);
+                                return;
+                            }
+                        }
+
+                    }
+
+
+                    else {
+                        myDblClick(e);
+                        return;
+                    }
+                    mySel = null;
+
+                    currentbox = null;
+                    clear(gctx);
+                    invalidate();
+                }
+            }
+
+            function myUp(e) {
+                if (mySel != null) {
+
+
+                    updatebox(boxes2);
+                }
+
+                isDrag = false;
+                isResizeDrag = false;
+                expectResize = -1;
+                if (currenttool == "pen") {
+
+                    var x = currentpaths[1].x;
+                    var y = currentpaths[1].y;
+                    var x2 = currentpaths[1].x;
+                    var y2 = currentpaths[1].y;
+
+                    for (var j = 1; j < currentpaths.length; ++j) {
+                        if (currentpaths[j].x < x)
+                            x = currentpaths[j].x;
+                        if (currentpaths[j].y < y)
+                            y = currentpaths[j].y;
+                        if (currentpaths[j].x > x2)
+                            x2 = currentpaths[j].x;
+                        if (currentpaths[j].y > y2)
+                            y2 = currentpaths[j].y;
+                    }
+
+                    var width = x2 - x;
+                    var height = y2 - y;
+                    var pos = getPosition(x, y);
+                    for (var j = 0; j < currentpaths.length; j++) {
+                        currentpaths[j].x -= x;
+                        currentpaths[j].y -= y;
+                    }
+                    mySel = addRect(pos.x, y, width, height, 'transparent', fillcolor, currenttool, currentpaths, false, false);
+                    if (currenttool != "pen")
+                        selectShape();
+                    currentpaths = [];
+                    updatebox(boxes2);
+
+                }
+
+            }
+            function myDblClick(e) {
+                getMouse(e);
+                var width = 50;
+                var height = 50;
+
+                addRect(mx - (width / 2), my - (height / 2), width, height, fillcolor, fillcolor, currenttool, null, true, false);
+                selectShape(); myDown(e);
+            }
+
+            function invalidate() {
+                canvasValid = false;
+            }
+            function getPosition(px, py) {
+                var element = canvas, offsetX = 0, offsetY = 0;
+                if (element.offsetParent) {
+                    do {
+                        offsetX += element.offsetLeft;
+                        offsetY += element.offsetTop;
+                    }
+                    while ((element = element.offsetParent));
+                }
+                offsetX += stylePaddingLeft;
+                offsetY += stylePaddingTop;
+                offsetX += styleBorderLeft;
+                offsetY += styleBorderTop;
+                mx = px - offsetX;
+                my = py - offsetY
+                return {
+                    x: mx,
+                    y: my
+                };
+            }
+            function getMouse(e) {
+                var element = canvas, offsetX = 0, offsetY = 0;
+                if (element.offsetParent) {
+                    do {
+                        offsetX += element.offsetLeft;
+                        offsetY += element.offsetTop;
+                    }
+                    while ((element = element.offsetParent));
+                }
+                offsetX += stylePaddingLeft;
+                offsetY += stylePaddingTop;
+                offsetX += styleBorderLeft;
+                offsetY += styleBorderTop;
+                mx = e.pageX - offsetX;
+                my = e.pageY - offsetY
+                return {
+                    x: mx,
+                    y: my
+                };
+            }
+            window.init2 = init2;
+        }
+        )(window);
+
+    </script>
+</head>
+<body onload="init2()">
+    <input style="position:absolute;margin:10px;background:none;border-color:white;z-index:19;border-style:solid;color:white;font-size:20px;padding:10px;left:100px" type="button" id="statusbtn" value="End" />
+
+    <div id="server"></div>
+    <div style="z-index: 100;position: absolute;right: 0;" id="divContainer">
+        <div style="float:right; margin-right:30px;" id="title_bar">
+            <div style="font-size:40px; color:white;cursor:pointer" id="chatminbtn">-</div>
+        </div>
+        <br /><br />
+        <div id="divLogin" class="login">
+            <div>
+                Your Name:<br />
+                <input id="txtNickName" type="text" class="textBox" />
+            </div>
+            <div id="divButton">
+                <input id="btnStartChat" type="button" class="submitButton" value="Start Chat" />
+            </div>
+        </div>
+
+        <div id="divChat" class="chatRoom" style="background-image:url(../../Content/chatbg.png);background-repeat:no-repeat;background-size:cover;margin:10px;height:500px;">
+            <div class="title" style="background-color:transparent;">
+                Welcome to Chat Room [<span id='spanUser'></span>]
+
+            </div>
+            <div class="content">
+                <div id="divChatWindow" class="chatWindow">
+                </div>
+                <div id="divusers" class="users">
+                </div>
+            </div>
+            <div class="messageBar">
+                <span class="input input--minoru" style="max-width:400px">
+                    <input class="input__field input__field--yoko" type="text" id="txtMessage" />
+                    <label class="input__label input__label--yoko" for="input-16">
+                        <span class="input__label-content input__label-content--yoko">Write Text Here</span>
+                    </label>
+                </span>
+
+                <input id="btnSendMsg" style="display:none;" type="button" value="Send" class="submitButton" />
+            </div>
+        </div>
+
+        <input id="hdId" type="hidden" />
+        <input id="hdUserName" type="hidden" />
+    </div>
+
+    <div id="container2">
+        <select style="margin-top:80px;position:absolute;" id="shape" class="cs-select cs-skin-circular">
+            <option value="" disabled selected>Select</option>
+            <option selected="selected" value="select">Select</option>
+            <option value="rectangle">Rectangle</option>
+            <option value="circle">Circle</option>
+            <option value="delete">Delete</option>
+            <option value="pen">Pen</option>
+            <option value="text">Text</option>
+        </select>
+        <canvas style="position:absolute; background-image:url(../../Content/board.jpg);background-size:cover;  -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-repeat:no-repeat; background-size: cover;" id="canvas2" width="1400" height="1000"> This text is displayed if your browser does not support HTML5 Canvas. </canvas>
+    </div>
+
+
+
+    <select id="fillcolor" class="cs-select cs-skin-boxes" style="margin-top:400px;">
+
+        <option value="#588c75" data-class="color-588c75">#588c75</option>
+        <option value="#b0c47f" data-class="color-b0c47f">#b0c47f</option>
+        <option value="#f3e395" data-class="color-f3e395">#f3e395</option>
+        <option value="#f3ae73" data-class="color-f3ae73">#f3ae73</option>
+        <option value="#da645a" data-class="color-da645a">#da645a</option>
+        <option value="#79a38f" data-class="color-79a38f">#79a38f</option>
+        <option value="#c1d099" data-class="color-c1d099">#c1d099</option>
+        <option value="#f5eaaa" data-class="color-f5eaaa">#f5eaaa</option>
+        <option value="#f5be8f" data-class="color-f5be8f">#f5be8f</option>
+        <option value="#e1837b" data-class="color-e1837b">#e1837b</option>
+        <option value="#9bbaab" data-class="color-9bbaab">#9bbaab</option>
+        <option value="#d1dcb2" data-class="color-d1dcb2">#d1dcb2</option>
+        <option value="#f9eec0" data-class="color-f9eec0">#f9eec0</option>
+        <option value="#f7cda9" data-class="color-f7cda9">#f7cda9</option>
+        <option value="#e8a19b" data-class="color-e8a19b">#e8a19b</option>
+        <option value="#bdd1c8" data-class="color-bdd1c8">#bdd1c8</option>
+        <option value="#e1e7cd" data-class="color-e1e7cd">#e1e7cd</option>
+        <option value="#faf4d4" data-class="color-faf4d4">#faf4d4</option>
+        <option value="#fbdfc9" data-class="color-fbdfc9">#fbdfc9</option>
+        <option value="#f1c1bd" data-class="color-f1c1bd">#f1c1bd</option>
+    </select>
+
+    <span style="position:absolute;top:200px" id="input16" class="input input--minoru">
+        <input class="input__field input__field--yoko" type="text" id="input-16" />
+        <label class="input__label input__label--yoko" for="input-16">
+            <span class="input__label-content input__label-content--yoko">Write Text Here</span>
+        </label>
+    </span>
+    <div class="morph-button morph-button-overlay morph-button-fixed">
+        <button type="button" style="
+    background-image: url(../content/image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 200px;
+"></button>
+
+        <div class="morph-content">
+            <div>
+                <div class="content-style-overlay">
+                    <span class="icon icon-close">Close the overlay</span>
+
+                    <select class="image-picker show-html">
+                        <optgroup label="Mathematics">
+                            <option data-img-src="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/math1.png" value="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/math1.png"></option>
+                            <option data-img-src="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/math2.png" value="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/math2.png"></option>
+                            <option data-img-src="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/math3.png" value="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/math3.png"></option>
+                            <option data-img-src="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/math4.png" value="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/math4.png"></option>
+                            <option data-img-src="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/math5.png" value="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/math5.png"></option>
+                            <option data-img-src="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/math6.png" value="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/math6.png"></option>
+
+                        </optgroup>
+                        <optgroup label="Transport">
+                            <option data-img-src="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/transport1.png" value="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/transport1.png"></option>
+                            <option data-img-src="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/transport2.png" value="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/transport2.png"></option>
+                            <option data-img-src="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/transport3.png" value="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/transport3.png"></option>
+                            <option data-img-src="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/transport4.png" value="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/transport4.png"></option>
+                            <option data-img-src="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/transport5.png" value="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/transport5.png"></option>
+                            <option data-img-src="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/transport6.png" value="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/transport6.png"></option>
+                            <option data-img-src="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/transport7.png" value="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/transport7.png"></option>
+                            <option data-img-src="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/transport8.png" value="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/transport8.png"></option>
+                            <option data-img-src="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/transport9.png" value="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/transport9.png"></option>
+                            <option data-img-src="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/transport10.png" value="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/transport10.png"></option>
+                            <option data-img-src="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/transport11.png" value="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/transport11.png"></option>
+                            <option data-img-src="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/transport12.png" value="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/transport12.png"></option>
+                            <option data-img-src="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/transport13.png" value="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/transport13.png"></option>
+                            <option data-img-src="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/transport14.png" value="http://learnpad-001-site1.smarterasp.net/content/SelectInspiration/img/clips/transport14.png"></option>
+
+                        </optgroup>
+                    </select>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div><!-- morph-button -->
+
+    <script>
+        (function () {
+            $("#chatminbtn").click(function () {
+                if ($(this).html() == "-") {
+                    $(this).html("+");
+                }
+                else {
+                    $(this).html("-");
+                }
+                $("#divChat").slideToggle();
+            });
+            $(".image-picker").imagepicker({
+                changed: function (val) {
+                    _currentImage = $(".image-picker").val();
+                    currenttool = "image";
+
+                    $(".icon-close").trigger("click");
+                }
+            });
+
+            [].slice.call(document.querySelectorAll('#shape')).forEach(function (el) {
+                new SelectFx(el, {
+                    stickyPlaceholder: false,
+                    onChange: function (val) {
+                        selectShape();
+                        var img = document.createElement('img');
+                        img.src = '../content/SelectInspiration/img/' + val + '.png';
+                        img.onload = function () {
+                            try {
+                                document.querySelector('span.cs-placeholder').style.backgroundImage = 'url(../content/SelectInspiration/img/' + val + '.png)';
+                            } catch (err) {
+
+                            }
+                        };
+
+
+                        currenttool = val;
+                        if (currenttool == "text") {
+                            $("#input16").show();
+                            $("#input-16").focus();
+                        }
+
+                    }
+                });
+            });
+
+
+            [].slice.call(document.querySelectorAll('#fillcolor')).forEach(function (el) {
+                new SelectFx(el, {
+                    stickyPlaceholder: true,
+
+                    onChange: function (val) {
+                        // document.querySelector('span.cs-placeholder').style.backgroundColor = val;
+                        fillcolor = val;
+                        $(".cs-skin-boxes > .cs-placeholder").html("");
+                    }
+                });
+            });
+
+
+            [].slice.call(document.querySelectorAll('#pictures')).forEach(function (el) {
+                new SelectFx(el, {
+                    stickyPlaceholder: false, onInit: function () {
+                        alert("init");
+
+                    }, onChange: function (val) {
+
+
+
+                    }
+                });
+                $(".cs-optgroup").find("li").each(function () {
+                    var attr = $(this).attr('data-value');
+
+                    if (attr != undefined) {
+                        $(this).css('background-image', 'url("' + attr + '")');
+
+                    }
+                });
+                // .css("backround-image", $(this).attr('data-value'));
+            });
+
+        })();
+    </script>
+
+    <link href="~/Content/ButtonComponentMorph/css/content.css" rel="stylesheet" />
+    <script src="~/content/ButtonComponentMorph/js/modernizr.custom.js"></script>
+    <script src="~/content/ButtonComponentMorph/js/uiMorphingButton_fixed.js"></script>
+    <script>
+        (function () {
+            var docElem = window.document.documentElement, didScroll, scrollPosition;
+
+            // trick to prevent scrolling when opening/closing button
+            function noScrollFn() {
+                window.scrollTo(scrollPosition ? scrollPosition.x : 0, scrollPosition ? scrollPosition.y : 0);
+            }
+
+            function noScroll() {
+                window.removeEventListener('scroll', scrollHandler);
+                window.addEventListener('scroll', noScrollFn);
+            }
+
+            function scrollFn() {
+                window.addEventListener('scroll', scrollHandler);
+            }
+
+            function canScroll() {
+                window.removeEventListener('scroll', noScrollFn);
+                scrollFn();
+            }
+
+            function scrollHandler() {
+                if (!didScroll) {
+                    didScroll = true;
+                    setTimeout(function () { scrollPage(); }, 60);
+                }
+            };
+
+            function scrollPage() {
+                scrollPosition = { x: window.pageXOffset || docElem.scrollLeft, y: window.pageYOffset || docElem.scrollTop };
+                didScroll = false;
+            };
+
+            scrollFn();
+
+            var el = document.querySelector('.morph-button');
+
+            new UIMorphingButton(el, {
+                closeEl: '.icon-close',
+                onBeforeOpen: function () {
+                    // don't allow to scroll
+                    noScroll();
+                },
+                onAfterOpen: function () {
+                    // can scroll again
+                    canScroll();
+                    // add class "noscroll" to body
+                    classie.addClass(document.body, 'noscroll');
+                    // add scroll class to main el
+                    classie.addClass(el, 'scroll');
+                },
+                onBeforeClose: function () {
+                    // remove class "noscroll" to body
+                    classie.removeClass(document.body, 'noscroll');
+                    // remove scroll class from main el
+                    classie.removeClass(el, 'scroll');
+                    // don't allow to scroll
+                    noScroll();
+                },
+                onAfterClose: function () {
+                    // can scroll again
+                    canScroll();
+                }
+            });
+        })();
+    </script>
+    <link type="text/css" rel="stylesheet" href="~/Css/ChatStyle.css" />
+    <link rel="stylesheet" href="~/Css/JQueryUI/themes/base/jquery.ui.all.css">
+
+
+
+
+
+    <!--Script references. -->
+    <!--Reference the jQuery library. -->
+
+    <script src="~/Scripts/ui/jquery.ui.core.js"></script>
+    <script src="~/Scripts/ui/jquery.ui.widget.js"></script>
+    <script src="~/Scripts/ui/jquery.ui.mouse.js"></script>
+    <script src="~/Scripts/ui/jquery.ui.draggable.js"></script>
+    <script src="~/Scripts/ui/jquery.ui.resizable.js"></script>
+
+    <script type="text/javascript">
+        var room = getParameterByName('room');
+        $(function () {
+
+            setScreen(true);
+
+            // Declare a proxy to reference the hub.
+            var chatHub = $.connection.chatHub;
+
+            registerClientMethods(chatHub);
+
+            // Start Hub
+            $.connection.hub.start().done(function () {
+
+                registerEvents(chatHub)
+
+            });
+
+        });
+
+        function setScreen(isLogin) {
+
+            if (!isLogin) {
+
+                $("#divChat").hide();
+                $("#divLogin").show();
+            }
+            else {
+
+                $("#divChat").show();
+                $("#divLogin").hide();
+            }
+
+        }
+
+        function registerEvents(chatHub) {
+
+            function init() {
+                try {
+                    var name = getParameterByName('userName');
+                    if (name.length > 0) {
+
+                        chatHub.server.connect(name, room);
+                    }
+                    else {
+                        // alert("Please enter name");
+                    }
+                } catch (err) { }
+
+            }
+            init();
+
+            $("#statusbtn").click(function () {
+
+                chatHub.server.endRoom(room);
+                window.location.href = "http://example.com/new_url";
+
+
+            });
+            $('#btnSendMsg').click(function () {
+
+                var msg = $("#txtMessage").val();
+                if (msg.length > 0) {
+
+                    var userName = $('#hdUserName').val();
+                    chatHub.server.sendMessageToAll(userName, msg, room);
+                    $("#txtMessage").val('');
+                }
+            });
+
+
+            $("#txtNickName").keypress(function (e) {
+                if (e.which == 13) {
+                    $("#btnStartChat").click();
+                }
+            });
+
+            $("#txtMessage").keypress(function (e) {
+                if (e.which == 13) {
+                    $('#btnSendMsg').click();
+                }
+            });
+
+
+        }
+
+        function registerClientMethods(chatHub) {
+
+            // Calls when user successfully logged in
+            chatHub.client.onConnected = function (id, userName, allUsers, messages) {
+
+                setScreen(true);
+
+                $('#hdId').val(id);
+                $('#hdUserName').val(userName);
+                $('#spanUser').html(userName);
+
+                // Add All Users
+                for (i = 0; i < allUsers.length; i++) {
+
+                    AddUser(chatHub, allUsers[i].ConnectionId, allUsers[i].UserName);
+                }
+
+                // Add Existing Messages
+                for (i = 0; i < messages.length; i++) {
+
+                    AddMessage(messages[i].UserName, messages[i].Message);
+                }
+
+
+            }
+
+            // On New User Connected
+            chatHub.client.onNewUserConnected = function (id, name) {
+
+                AddUser(chatHub, id, name);
+            }
+
+
+            // On User Disconnected
+            chatHub.client.onUserDisconnected = function (id, userName) {
+
+                $('#' + id).remove();
+
+                var ctrId = 'private_' + id;
+                $('#' + ctrId).remove();
+
+
+                var disc = $('<div class="disconnect">"' + userName + '" logged off.</div>');
+
+                $(disc).hide();
+                $('#divusers').prepend(disc);
+                $(disc).fadeIn(200).delay(2000).fadeOut(200);
+
+            }
+
+            chatHub.client.messageReceived = function (userName, message) {
+
+                AddMessage(userName, message);
+            }
+
+
+            chatHub.client.sendPrivateMessage = function (windowId, fromUserName, message) {
+
+                var ctrId = 'private_' + windowId;
+
+
+                if ($('#' + ctrId).length == 0) {
+
+                    createPrivateChatWindow(chatHub, windowId, ctrId, fromUserName);
+
+                }
+
+                $('#' + ctrId).find('#divMessage').append('<div class="message"><span class="userName">' + fromUserName + '</span>: ' + message + '</div>');
+
+                // set scrollbar
+                var height = $('#' + ctrId).find('#divMessage')[0].scrollHeight;
+                $('#' + ctrId).find('#divMessage').scrollTop(height);
+
+            }
+
+        }
+
+        function AddUser(chatHub, id, name) {
+
+            var userId = $('#hdId').val();
+
+            var code = "";
+
+            if (userId == id) {
+
+                code = $('<div class="loginUser">' + name + "</div>");
+
+            }
+            else {
+
+                code = $('<a id="' + id + '" class="user" >' + name + '<a>');
+
+                $(code).dblclick(function () {
+
+                    var id = $(this).attr('id');
+
+                    if (userId != id)
+                        OpenPrivateChatWindow(chatHub, id, name);
+
+                });
+            }
+
+            $("#divusers").append(code);
+
+        }
+
+        function AddMessage(userName, message) {
+            $('#divChatWindow').append('<div class="message"><span class="userName">' + userName + '</span>: ' + message + '</div>');
+
+            var height = $('#divChatWindow')[0].scrollHeight;
+            $('#divChatWindow').scrollTop(height);
+        }
+
+        function OpenPrivateChatWindow(chatHub, id, userName) {
+
+            var ctrId = 'private_' + id;
+
+            if ($('#' + ctrId).length > 0) return;
+
+            createPrivateChatWindow(chatHub, id, ctrId, userName);
+
+        }
+
+        function createPrivateChatWindow(chatHub, userId, ctrId, userName) {
+
+            var div = '<div id="' + ctrId + '" class="ui-widget-content draggable" rel="0">' +
+                       '<div class="header">' +
+                          '<div  style="float:right;">' +
+                              '<img id="imgDelete"  style="cursor:pointer;" src="/Images/delete.png"/>' +
+                           '</div>' +
+
+                           '<span class="selText" rel="0">' + userName + '</span>' +
+                       '</div>' +
+                       '<div id="divMessage" class="messageArea">' +
+
+                       '</div>' +
+                       '<div class="buttonBar">' +
+                          '<input id="txtPrivateMessage" class="msgText" type="text"   />' +
+                          '<input id="btnSendMessage" class="submitButton button" type="button" value="Send"   />' +
+                       '</div>' +
+                    '</div>';
+
+            var $div = $(div);
+
+            // DELETE BUTTON IMAGE
+            $div.find('#imgDelete').click(function () {
+                $('#' + ctrId).remove();
+            });
+
+            // Send Button event
+            $div.find("#btnSendMessage").click(function () {
+
+                $textBox = $div.find("#txtPrivateMessage");
+                var msg = $textBox.val();
+                if (msg.length > 0) {
+
+                    chatHub.server.sendPrivateMessage(userId, msg, room);
+                    $textBox.val('');
+                }
+            });
+
+            // Text Box event
+            $div.find("#txtPrivateMessage").keypress(function (e) {
+                if (e.which == 13) {
+                    $div.find("#btnSendMessage").click();
+                }
+            });
+
+            AddDivToContainer($div);
+
+        }
+
+        function AddDivToContainer($div) {
+            $('#divContainer').prepend($div);
+
+            $div.draggable({
+
+                handle: ".header",
+                stop: function () {
+
+                }
+            });
+
+            ////$div.resizable({
+            ////    stop: function () {
+
+            ////    }
+            ////});
+
+        }
+
+    </script>
+
+
+    <script>
+        (function () {
+            // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+            if (!String.prototype.trim) {
+                (function () {
+                    // Make sure we trim BOM and NBSP
+                    var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+                    String.prototype.trim = function () {
+                        return this.replace(rtrim, '');
+                    };
+                })();
+            }
+
+            [].slice.call(document.querySelectorAll('input.input__field')).forEach(function (inputEl) {
+                // in case the input is already filled..
+                if (inputEl.value.trim() !== '') {
+                    classie.add(inputEl.parentNode, 'input--filled');
+                }
+
+                // events:
+                inputEl.addEventListener('focus', onInputFocus);
+                inputEl.addEventListener('blur', onInputBlur);
+            });
+
+            function onInputFocus(ev) {
+                classie.add(ev.target.parentNode, 'input--filled');
+            }
+
+            function onInputBlur(ev) {
+                if (ev.target.value.trim() === '') {
+                    classie.remove(ev.target.parentNode, 'input--filled');
+                }
+            }
+        })();
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-1.10.2.js"></script>
+ 
+</head>
+<body>
+    <canvas id="canvas" width=600 height=600></canvas>
+    
+    <br/>
+    <video controls="controls"
+           class="video-stream"
+            
+           data-youtube-id="N9oxmRT2YWw"
+           src="http://www.youtube.com/watch?v=OmxT8a9RWbE?html5=1"></video>
+
+    <button id="clear">Clear Canvas</button>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            var v = document.getElementById('v');
+            var canvas = document.getElementById('canvas');
+            var context = canvas.getContext('2d');
+            var back = document.createElement('canvas');
+            var backcontext = back.getContext('2d');
+
+            var cw,ch;
+
+            v.addEventListener('play', function(){
+                cw = v.clientWidth;
+                ch = v.clientHeight;
+                canvas.width = cw;
+                canvas.height = ch;
+                back.width = cw;
+                back.height = ch;
+                draw(v,context,backcontext,cw,ch);
+            },false);
+
+        },false);
+
+        function draw(v,c,bc,w,h) {
+            if(v.paused || v.ended) return false;
+            // First, draw it into the backing canvas
+            bc.drawImage(v,0,0,w,h);
+            // Grab the pixel data from the backing canvas
+            var idata = bc.getImageData(0,0,w,h);
+            var data = idata.data;
+            // Loop through the pixels, turning them grayscale
+            for(var i = 0; i < data.length; i+=4) {
+                var r = data[i];
+                var g = data[i+1];
+                var b = data[i+2];
+                var brightness = (3*r+4*g+b)>>>3;
+                data[i] = brightness;
+                data[i+1] = brightness;
+                data[i+2] = brightness;
+            }
+            idata.data = data;
+            // Draw the pixels onto the visible canvas
+            c.putImageData(idata,0,0);
+            // Start over!
+            setTimeout(function(){ draw(v,c,bc,w,h); }, 0);
+        }
+ 
+        document.addEventListener('DOMContentLoaded', function(){
+            var v = document.getElementById('v');
+            var canvas = document.getElementById('c');
+            var context = canvas.getContext('2d');
+            var back = document.createElement('canvas');
+            var backcontext = back.getContext('2d');
+
+            var cw,ch;
+
+            v.addEventListener('play', function(){
+                cw = v.clientWidth;
+                ch = v.clientHeight;
+                canvas.width = cw;
+                canvas.height = ch;
+                back.width = cw;
+                back.height = ch;
+                draw(v,context,backcontext,cw,ch);
+            },false);
+
+
+    </script>
+    <script>
+        var ctx = canvas.getContext("2d");
+        var canvasMouseX;
+        var canvasMouseY;
+        var canvasOffset = $("#canvas").offset();
+        var offsetX = canvasOffset.left;
+        var offsetY = canvasOffset.top;
+        var storedLines = [];
+        var startX = 0;
+        var startY = 0;
+        var radius = 12;
+
+        ctx.strokeStyle = "orange";
+        ctx.font = '12px Arial';
+
+        $("#canvas").mousedown(function (e) {
+            handleMouseDown(e);
+        });
+
+        function handleMouseDown(e) {
+            canvasMouseX = parseInt(e.clientX - offsetX);
+            canvasMouseY = parseInt(e.clientY - offsetY);
+
+            // Put your mousedown stuff here
+            if (hitStartCircle(canvasMouseX, canvasMouseY)) {
+                fillPolyline();
+                return;
+            }
+            storedLines.push({
+                x: canvasMouseX,
+                y: canvasMouseY
+            });
+            if (storedLines.length == 1) {
+                startX = canvasMouseX;
+                startY = canvasMouseY;
+                ctx.fillStyle = "green";
+                ctx.beginPath();
+                ctx.arc(canvasMouseX, canvasMouseY, radius, 0, 2 * Math.PI, false);
+                ctx.fill();
+            } else {
+                var c = storedLines.length - 2;
+                ctx.strokeStyle = "orange";
+                ctx.lineWidth = 3;
+                ctx.beginPath();
+                ctx.moveTo(storedLines[c].x, storedLines[c].y);
+                ctx.lineTo(canvasMouseX, canvasMouseY);
+                ctx.stroke();
+            }
+        }
+
+        function hitStartCircle(x, y) {
+            var dx = x - startX;
+            var dy = y - startY;
+
+            return (dx * dx + dy * dy < radius * radius)
+        }
+
+        function fillPolyline() {
+            ctx.strokeStyle = "red";
+            ctx.fillStyle = "blue";
+            ctx.lineWidth = 3;
+             ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+            ctx.moveTo(storedLines[0].x, storedLines[0].y);
+            for (var i = 0; i < storedLines.length; i++) {
+                ctx.lineTo(storedLines[i].x, storedLines[i].y);
+            }
+            ctx.closePath();
+            ctx.fill();
+            ctx.stroke();
+            storedLines = [];
+        }
+
+        $("#clear").click(function () {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            storedLines = [];
+        });
+
+
+
+</script>
+
+</body>
+</html>
