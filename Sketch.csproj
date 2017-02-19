@@ -242,6 +242,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Chalkifi.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Common\MessageDetail.cs" />
+    <Compile Include="Common\UserDetail.cs" />
     <Compile Include="C__MigrationHistory.cs">
       <DependentUpon>Chalkifi.tt</DependentUpon>
     </Compile>
